@@ -12,9 +12,60 @@
   <style>
     .policy-library{margin-top:34px;padding:24px;border:1px solid rgba(35,213,200,.23);border-radius:16px;background:linear-gradient(145deg,rgba(15,45,58,.82),rgba(8,24,34,.86))}.policy-tools{display:flex;justify-content:space-between;gap:18px;align-items:center;margin-bottom:20px;flex-wrap:wrap}.policy-tools h3{margin:0;font-size:21px}.policy-tools p{margin:3px 0 0;color:var(--muted);font-size:13px}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter-btn{appearance:none;cursor:pointer;color:#b8d2d5;border:1px solid var(--line);border-radius:999px;background:rgba(5,18,27,.5);padding:7px 12px;font:inherit;font-size:13px}.filter-btn:hover,.filter-btn.active{background:var(--teal);border-color:var(--teal);color:#05212a;font-weight:700}.policy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}.policy-item{position:relative;display:flex;flex-direction:column;gap:9px;min-height:175px;padding:17px;border-radius:11px;background:rgba(4,19,27,.5);border:1px solid rgba(161,213,218,.12);transition:border-color .2s,transform .2s}.policy-item:hover{transform:translateY(-2px);border-color:rgba(35,213,200,.52)}.policy-meta{display:flex;justify-content:space-between;align-items:center;gap:10px;color:var(--muted);font-size:12px}.policy-level{color:var(--teal);font-weight:700;letter-spacing:.08em}.policy-item h4{font-size:16px;line-height:1.45;margin:0}.policy-item p{font-size:13px;line-height:1.55;color:#9db8bd;margin:0}.policy-item a{margin-top:auto;font-size:13px;color:#a4ddff}.policy-item a:hover{color:var(--teal)}.policy-note-line{margin:16px 0 0;color:var(--muted);font-size:12px}.policy-note-line b{color:#c5dcdf;font-weight:600}@media(max-width:900px){.policy-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:580px){.policy-library{padding:16px}.policy-grid{grid-template-columns:1fr}.policy-tools{align-items:flex-start;flex-direction:column}}
   </style>
+  <style>
+    :root{--bg:#f6faff;--panel:#fff;--panel2:#f1f7ff;--ink:#0d2e5d;--muted:#60748f;--line:#d5e2f1;--teal:#1467c5;--blue:#257fe6;--amber:#ef8c2f;--good:#16885b}.topbar{background:rgba(255,255,255,.9)}body{background:radial-gradient(circle at 78% 0,#e3f1ff 0,transparent 30%),var(--bg)}.brand-logo{width:130px;height:auto;display:block}.brand{gap:14px}.command{background:linear-gradient(145deg,#0e4f97,#1d75cc);border-color:#2f83dc;box-shadow:0 20px 50px rgba(20,103,197,.2)}.command-title,.metric b{color:#fff}.metric{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.25)}.metric small,.legend{color:#dceeff}.chip{background:#fff;border-color:#cbddec;color:#39607c}.section{border-color:var(--line)}.mini-card,.architecture-card,.module,.algorithm{background:#fff;border-color:var(--line);box-shadow:0 8px 24px rgba(29,89,151,.06)}.policy-note{background:linear-gradient(135deg,#e9f4ff,#fff);border-color:#bcd9f4}.architecture-card .arch-tag{background:#edf6ff;border-color:#cbe3fa;color:#2468a8}.result{background:#eef6ff}.cta-box{background:linear-gradient(110deg,#e9f4ff,#fff);border-color:#b5d8f4}.footer{border-color:var(--line)}
+  </style><style>#policy{display:none}</style>
+  <style>
+    body{background:linear-gradient(180deg,#f9fcff 0,#edf6ff 40rem,#fff 80rem)}.topbar{height:68px;margin-top:16px;padding:0 20px;border:1px solid #d8e7f5;border-radius:18px;box-shadow:0 8px 28px rgba(25,90,160,.08);backdrop-filter:blur(12px)}.topnav{gap:8px}.topnav a{padding:8px 10px;border-radius:8px}.topnav a:hover{background:#eaf4ff}.hero{padding:94px 0 74px}.hero h1{color:#0b3e81;text-shadow:0 1px 0 #fff}.hero h1 span{background:linear-gradient(90deg,#1263bd,#2589e8);-webkit-background-clip:text;background-clip:text;color:transparent}.lede{max-width:590px}.command{border-radius:22px;box-shadow:0 24px 56px rgba(14,83,159,.25)}.metric{border-radius:12px}.section{padding:82px 0}.section:nth-of-type(even){background:linear-gradient(90deg,rgba(233,244,255,.65),rgba(255,255,255,.2))}.section h2{color:#0b3e81}.module,.mini-card,.algorithm,.architecture-card{border-radius:16px}.module{min-height:240px;padding:24px}.module-icon{border-radius:12px;background:#eaf4ff}.module:hover{box-shadow:0 18px 35px rgba(35,103,174,.12)}.architecture-card{padding:26px}.arch-row{padding:17px 0}.result{border-radius:0 12px 12px 0}.cta{padding-top:72px}.cta-box{border-radius:24px;box-shadow:0 20px 42px rgba(25,90,160,.1)}@media(max-width:580px){.topbar{margin:10px 12px 0;height:60px;padding:0 12px}.brand-logo{width:105px}.brand span:last-child{display:none}.status{font-size:11px}.hero{padding:58px 0 44px}.section{padding:58px 0}}
+  </style>
+  <style>
+    body{font-family:"Microsoft YaHei UI","Microsoft YaHei","Noto Sans CJK SC","Segoe UI",Arial,sans-serif;font-weight:400;color:#153b67;text-rendering:optimizeLegibility}.topnav,.status{font-size:15px;font-weight:500;color:#345978}.hero h1,.section h2{font-weight:700;letter-spacing:-.025em}.lede{font-size:18px;line-height:1.75;color:#355876}.section-intro{font-size:17px;line-height:1.75;color:#3e5d79}.mini-card p,.module p,.algorithm p{font-size:15px;line-height:1.7;color:#46647e}.arch-row strong,.module h3,.algorithm h3{color:#143e6e}.capability{font-size:14px;color:#42617e}.metric small,.legend{font-size:13px;font-weight:500}.chip{font-size:14px}.footer{font-size:13px}.result span{font-size:14px;color:#486783}@media(max-width:580px){.lede{font-size:16px}.section-intro{font-size:16px}.module p,.mini-card p,.algorithm p{font-size:15px}}
+  </style>
+  <style>
+    body{font-family:"Microsoft YaHei","微软雅黑","SimSun",Arial,sans-serif;text-rendering:auto;letter-spacing:0}.lede,.section-intro{color:#244d78;font-weight:500}.mini-card p,.module p,.algorithm p{color:#2d557d;font-weight:500}.capability,.result span{color:#2f587f;font-weight:500}.topnav a,.status{color:#1f4c79;font-weight:600}.arch-row strong,.module h3,.algorithm h3{color:#0b3d75}.section-kicker,.eyebrow{font-weight:800;letter-spacing:.06em}.chip{font-weight:600;color:#28557f}.metric small,.legend{font-weight:600}.footer{color:#365c80;font-weight:500}.command{font-family:"Microsoft YaHei","微软雅黑",Arial,sans-serif}.command .metric small,.command .legend{color:#eef7ff;text-shadow:0 1px 1px rgba(0,0,0,.12)}
+  </style>
+  <style>
+    /* 首页关键文案与策略中心：保持蓝白界面的清晰对比 */
+    .hero h1 span{
+      background:none !important;
+      -webkit-background-clip:initial !important;
+      background-clip:initial !important;
+      color:#095eb8 !important;
+      text-shadow:none !important;
+      font-weight:800;
+    }
+    .strategy-list{gap:12px}
+    .strategy{
+      grid-template-columns:8px minmax(0,1fr) auto;
+      align-items:start;
+      padding:14px 15px;
+      border:1px solid #d5e6f6;
+      border-radius:12px;
+      background:#f3f8fe !important;
+      box-shadow:none;
+    }
+    .strategy i{margin-top:7px;box-shadow:0 0 0 4px rgba(20,103,197,.10)}
+    .strategy b{display:block;color:#113f75;font-size:16px;font-weight:700;line-height:1.45}
+    .strategy small{display:block;margin-top:3px;color:#3f6285;font-size:14px;font-weight:500;line-height:1.55}
+    .strategy em{
+      margin-top:1px;
+      padding:4px 7px;
+      border-radius:999px;
+      background:#e3f5ec;
+      color:#15734f;
+      font-size:12px;
+      font-weight:700;
+      line-height:1.3;
+      white-space:nowrap;
+    }
+  </style>
+  <style>
+    .topnav a.current{background:#eaf4ff;color:#0f5fac}.breadcrumb{display:flex;align-items:center;gap:7px;padding-top:18px;color:#58738d;font-size:14px;font-weight:500}.breadcrumb strong{color:#1b548f;font-weight:700}.breadcrumb .sep{color:#9db1c4}
+  </style>
 </head>
 <body>
-  <header class="shell topbar"><a class="brand" href="#top"><span class="mark">ϟ</span><span>EMS 智慧能源运营平台</span></a><nav class="topnav"><a href="#policy">政策背景</a><a href="#architecture">业务架构</a><a href="#modules">功能模块</a><a href="#algorithm">调度算法</a></nav><div class="status"><span class="dot"></span>平台运行中</div></header>
+  <header class="shell topbar"><a class="brand" href="#top"><img class="brand-logo" src="swaychip-logo.png" alt="中感睿思 SWAYCHIP" /><span>EMS 智慧能源运营平台</span></a><nav class="topnav" aria-label="站点导航"><a class="current" href="index.html">首页</a><a href="policy.html">政策背景</a><a href="architecture.html">业务架构</a><a href="#modules">功能模块</a><a href="#algorithm">调度算法</a><a href="bids.html">招标信息</a></nav><div class="status"><span class="dot"></span>平台运行中</div></header>
+  <div class="shell breadcrumb" aria-label="当前位置"><span>当前位置：</span><strong>首页</strong></div>
   <main id="top">
     <section class="shell hero"><div><div class="eyebrow">ENERGY MANAGEMENT SYSTEM</div><h1>让每一度能量<br>都<span>可观、可算、可控</span></h1><p class="lede">面向园区、工商业用户与聚合运营商，构建“源—网—荷—储—车—交易”一体化运营闭环，实现从设备接入到市场收益的智能协同。</p><div class="chips"><span class="chip">虚拟电厂聚合</span><span class="chip">电力交易决策</span><span class="chip">微电网优化调度</span><span class="chip">充换电运营</span></div></div>
       <div class="command"><div class="command-head"><span class="command-title">综合能源运行态势 · 今日</span><span class="live">● 计算中</span></div><div class="metric-grid"><div class="metric"><b>12.68 MW</b><small>实时负荷</small></div><div class="metric"><b>4.32 MW</b><small>分布式出力</small></div><div class="metric"><b>86.4%</b><small>储能 SOC</small></div></div><div class="chart"><svg viewBox="0 0 500 150" preserveAspectRatio="none"><defs><linearGradient id="a" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#23d5c8" stop-opacity=".35"/><stop offset="1" stop-color="#23d5c8" stop-opacity="0"/></linearGradient></defs><path class="gridline" d="M0 30H500M0 75H500M0 120H500"/><path class="area" d="M0 126 C30 110 42 116 65 97 S105 114 129 86 S171 102 191 70 S231 85 254 59 S295 69 320 46 S354 72 385 42 S430 58 459 26 S480 38 500 18 V150H0Z"/><path class="line" d="M0 126 C30 110 42 116 65 97 S105 114 129 86 S171 102 191 70 S231 85 254 59 S295 69 320 46 S354 72 385 42 S430 58 459 26 S480 38 500 18"/></svg></div><div class="legend"><span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>24:00</span></div></div>
@@ -42,6 +93,7 @@
     <section class="shell cta"><div class="cta-box"><h2>构建可持续运营的能源新能力</h2><p>以平台化、智能化、市场化的方式，释放每一类能源资源的价值。</p></div></section>
   </main>
   <footer class="shell footer"><span>© 2026 EMS 智慧能源运营平台</span><span>源网荷储 · 虚拟电厂 · 电力交易 · 充换电运营</span></footer>
+  <script src="site-data.js"></script>
   <script>
     const buttons = document.querySelectorAll('.filter-btn');
     const policies = document.querySelectorAll('.policy-item');
@@ -50,5 +102,6 @@
       buttons.forEach((item) => item.classList.toggle('active', item === button));
       policies.forEach((policy) => { policy.hidden = level !== 'all' && policy.dataset.level !== level; });
     }));
+    window.EMSLocalData.persistPage({ id: 'index.html', kind: 'solution-home' });
   </script>
 </body></html>
