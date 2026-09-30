@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EMS 智慧能源运营解决方案算法预测系统：微电网场景五项算法（智能排程、光伏预测、负荷预测、辅助服务需求响应报量与排程）、电力交易场景四项算法（日前现货价格、日内现货价格、现货价差、用电负荷预测），并配备智能诊断与运维大模型（故障预测与健康管理 PHM、运维知识问答），含预测正确度、数据清单与算法闭环。" />
+  <title>算法预测｜EMS 智慧能源运营解决方案</title>
+  <style>
+    :root{--blue:#1467c5;--deep:#0b3e81;--ink:#153b67;--muted:#45627c;--line:#d5e4f2}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#f8fcff 0,#edf6ff 32rem,#fff 74rem);color:var(--ink);font:16px/1.65 "Microsoft YaHei","微软雅黑","Segoe UI",Arial,sans-serif}.shell{max-width:1320px;margin:auto;padding:0 34px}a{color:inherit;text-decoration:none}.topbar{height:68px;margin-top:16px;padding:0 20px;border:1px solid #d8e7f5;border-radius:18px;background:rgba(255,255,255,.94);box-shadow:0 8px 28px rgba(25,90,160,.08);display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:14px;font-weight:700;color:#173e6c}.brand-logo{width:130px;height:auto;display:block}.site-nav{display:flex;align-items:center;gap:6px;color:#1f4c79;font-size:14px;font-weight:600}.site-nav a{padding:8px 9px;border-radius:8px}.site-nav a:hover,.site-nav a.current{background:#eaf4ff;color:#0f5fac}.back{padding:8px 12px;border:1px solid #d5e6f5;border-radius:9px;background:#fff;color:#23588f;font-size:14px;font-weight:600}.breadcrumb{display:flex;align-items:center;gap:7px;padding-top:18px;color:#58738d;font-size:14px;font-weight:500}.breadcrumb strong{color:#1b548f}.sep{color:#9db1c4}.hero{padding:60px 0 30px}.eyebrow{color:var(--blue);font-size:13px;font-weight:800;letter-spacing:.08em}.hero h1{margin:9px 0 12px;color:var(--deep);font-size:clamp(34px,5vw,54px);line-height:1.15;letter-spacing:-.03em}.lead{max-width:900px;margin:0;color:#244d78;font-size:18px;font-weight:500;line-height:1.75}.overview{display:grid;grid-template-columns:1.25fr .75fr;gap:22px;margin:8px 0 34px}.overview-main,.overview-note{padding:24px;border:1px solid #c9e0f5;border-radius:18px;background:rgba(255,255,255,.86);box-shadow:0 14px 32px rgba(25,90,160,.07)}.overview-main h2{margin:0 0 8px;color:#123f75;font-size:20px}.overview p{margin:0;color:#46647e;font-size:15px;font-weight:500}.overview-note{background:linear-gradient(145deg,#ecf8f2,#fff);border-color:#b9e1ce}.overview-note b{display:block;margin-bottom:6px;color:#166445;font-size:17px}.module-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.module-tabs button{cursor:pointer;padding:8px 12px;border:1px solid #cfe1f3;border-radius:999px;background:#fff;color:#3a6188;font:700 13px/1.35 inherit}.module-tabs button:hover,.module-tabs button[aria-selected="true"]{border-color:var(--blue);background:#eaf4ff;color:#0f5fac}.platform{margin:0 0 28px;padding:30px;border:1px solid #c9e0f5;border-radius:22px;background:linear-gradient(145deg,rgba(239,247,255,.94),#fff 58%);box-shadow:0 18px 42px rgba(25,90,160,.08)}.platform-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:17px;align-items:start;margin-bottom:12px}.number{display:grid;place-items:center;width:47px;height:47px;border-radius:14px;background:#1467c5;color:#fff;font-size:16px;font-weight:800;box-shadow:0 7px 16px rgba(20,103,197,.22)}.platform h2{margin:0;color:var(--deep);font-size:26px;line-height:1.3}.platform-head p,.table-note{margin:5px 0 0;color:#45627c;font-size:15px;font-weight:500}.table-note{margin:0 0 16px}.function-table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px;background:#fff}.function-table{width:100%;min-width:880px;border-collapse:collapse;font-size:14px;line-height:1.65}.function-table th,.function-table td{padding:13px 15px;border-right:1px solid #e1ebf4;border-bottom:1px solid #e1ebf4;text-align:left;vertical-align:top}.function-table thead th{position:sticky;top:0;background:#e8f3ff;color:#114c8d;font-size:14px}.function-table tbody th{width:18%;background:#f6faff;color:#184d84;font-weight:800}.function-table tbody th+th{width:23%;background:#fcfdff;color:#265f97;font-weight:700}.function-table td{width:59%;color:#45627c;font-weight:500}.function-table tr:last-child>*{border-bottom:0}.function-table tr>*:last-child{border-right:0}.platform-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.platform-meta span{padding:6px 10px;border-radius:999px;background:#e7f2ff;color:#286199;font-size:13px;font-weight:700}.footer{display:flex;justify-content:space-between;gap:18px;padding:22px 0;color:#365c80;border-top:1px solid var(--line);font-size:13px;font-weight:500}@media(max-width:1050px){.site-nav{display:none}.overview{grid-template-columns:1fr}}@media(max-width:650px){.shell{padding:0 18px}.topbar{height:60px;margin:10px 12px 0;padding:0 12px}.brand-logo{width:105px}.brand span{display:none}.back{font-size:12px;padding:7px 9px}.breadcrumb{padding-top:14px;font-size:13px}.hero{padding:46px 0 24px}.lead{font-size:16px}.overview-main,.overview-note,.platform{padding:18px;border-radius:16px}.platform h2{font-size:22px}.function-table{font-size:13px}.function-table th,.function-table td{padding:11px 12px}.footer{display:block}.footer span{display:block}.footer span+span{margin-top:5px}}
+  </style>
+  <style>
+    /* 快速导航 */
+    .quick-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px}.quick-nav a{padding:8px 13px;border:1px solid #cfe1f3;border-radius:999px;background:#fff;color:#3a6188;font-size:13px;font-weight:700}.quick-nav a:hover{border-color:var(--blue);background:#eaf4ff;color:#0f5fac}
+    /* 三档时间尺度说明 */
+    .scale-legend{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin-top:16px}.scale-item{padding:13px 14px;border:1px solid #d7e7f7;border-radius:13px;background:#f7fbff}.scale-item b{display:block;margin:8px 0 3px;color:#123f75;font-size:17px;line-height:1.3}.scale-item small{display:block;color:#4d6c8b;font-size:13px;font-weight:500;line-height:1.5}.scale-tag{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.02em;white-space:nowrap}.scale-tag.ultra{background:#e4f0ff;color:#1467c5}.scale-tag.short{background:#e3f5ec;color:#15734f}.scale-tag.mid{background:#fdf0e0;color:#b46a12}
+    /* 预测模型卡片 */
+    .model-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:4px}.model-card{display:flex;flex-direction:column;gap:14px;padding:22px;border:1px solid #d5e4f2;border-radius:18px;background:#fff;box-shadow:0 10px 26px rgba(25,90,160,.06);transition:box-shadow .2s,transform .2s}.model-card:hover{transform:translateY(-2px);box-shadow:0 18px 36px rgba(25,90,160,.13)}.model-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.model-horizon{color:#3d6287;font-size:13px;font-weight:700;text-align:right}.model-card h3{margin:0;color:var(--deep);font-size:18px;line-height:1.4}.model-spec{margin:0;display:grid;gap:8px}.model-spec>div{display:grid;grid-template-columns:74px minmax(0,1fr);gap:10px;align-items:start}.model-spec dt{color:#6b8299;font-size:13px;font-weight:700}.model-spec dd{margin:0;color:#2f587f;font-size:13.5px;font-weight:500;line-height:1.6}.accuracy{padding:13px 14px;border:1px solid #d9e8f7;border-radius:13px;background:#f7fbff}.acc-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px}.acc-head span{color:#5a7590;font-size:13px;font-weight:700}.acc-head b{color:#0f5fac;font-size:22px;font-weight:800;letter-spacing:-.01em}.bar{position:relative;height:8px;margin:9px 0 7px;border-radius:999px;background:#e4eef8;overflow:hidden}.bar i{position:absolute;top:0;bottom:0;left:0;border-radius:999px;background:linear-gradient(90deg,#4a9ae8,#0f5fac)}.bar i.s{background:linear-gradient(90deg,#54c08a,#16885b)}.bar i.m{background:linear-gradient(90deg,#f0b164,#d87a16)}.accuracy small{display:block;color:#4f6c88;font-size:12.5px;font-weight:500;line-height:1.55}.model-block h4{margin:0 0 7px;color:#123f75;font-size:14px;font-weight:800}.model-block ul{margin:0;padding-left:17px;display:grid;gap:5px}.model-block li{color:#3c5e80;font-size:13.5px;font-weight:500;line-height:1.6}.model-block p{margin:0;color:#3c5e80;font-size:13.5px;font-weight:500;line-height:1.65}.model-foot{margin-top:auto;display:flex;flex-wrap:wrap;gap:7px}.model-foot span{padding:5px 9px;border-radius:999px;background:#eef5fd;color:#2b6297;font-size:12px;font-weight:700}
+    /* 正确度矩阵 */
+    .function-table.flow th,.function-table.flow td{width:auto}.function-table.flow tbody th{width:16%}
+    .acc-table td,.acc-table thead th{text-align:center}.acc-table tbody th{width:22%;text-align:left}.acc-table td{width:auto}.acc-table .avg{background:#f6faff;color:#114c8d;font-weight:800}.acc-table .grade{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:999px;font-size:11px;font-weight:800;vertical-align:1px}.g-a{background:#e3f5ec;color:#15734f}.g-b{background:#e4f0ff;color:#1467c5}.g-c{background:#fdf0e0;color:#b46a12}
+    .loop{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:4px}.loop-card{padding:18px;border:1px solid #d5e4f2;border-radius:15px;background:#fff;box-shadow:0 8px 20px rgba(25,90,160,.05)}.loop-card b{display:block;margin-bottom:5px;color:#123f75;font-size:16px}.loop-card p{margin:0;color:#3c5e80;font-size:13.5px;font-weight:500;line-height:1.6}.loop-card i{display:grid;place-items:center;width:30px;height:30px;margin-bottom:10px;border-radius:9px;background:#e8f3ff;color:#1467c5;font-size:14px;font-weight:800;font-style:normal}
+    /* 能力分组标题 */
+    .group-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:center;margin:34px 0 20px;padding-bottom:13px;border-bottom:2px solid #dbeafe}.group-badge{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:#e8f3ff;color:#1467c5;font-size:17px;font-weight:800}.group-head h2{margin:0;color:var(--deep);font-size:24px;line-height:1.3}.group-head p{margin:4px 0 0;color:#45627c;font-size:15px;font-weight:500}
+    /* 策略与运维能力卡片 */
+    .cap-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:4px}.cap-card{display:flex;flex-direction:column;gap:15px;padding:24px;border:1px solid #c9e0f5;border-radius:20px;background:linear-gradient(145deg,#fff,#f7fbff 72%);box-shadow:0 12px 30px rgba(25,90,160,.07);transition:box-shadow .2s,transform .2s}.cap-card:hover{transform:translateY(-2px);box-shadow:0 18px 38px rgba(25,90,160,.13)}.cap-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start}.cap-no{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:#1467c5;color:#fff;font-size:15px;font-weight:800;box-shadow:0 6px 14px rgba(20,103,197,.22)}.cap-head h3{margin:0;color:var(--deep);font-size:20px;line-height:1.35}.cap-head p{margin:5px 0 0;color:#45627c;font-size:14px;font-weight:500;line-height:1.65}.cap-spec{margin:0;display:grid;gap:8px;padding:14px;border:1px solid #dbe9f6;border-radius:13px;background:#f7fbff}.cap-spec>div{grid-template-columns:88px minmax(0,1fr)}.cap-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.cap-cols h4{margin:0 0 7px;color:#123f75;font-size:14px;font-weight:800}.cap-cols ul{margin:0;padding-left:16px;display:grid;gap:4px}.cap-cols li{color:#3c5e80;font-size:13px;font-weight:500;line-height:1.6}.cap-kpi{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px}.cap-kpi span{padding:6px 10px;border-radius:999px;background:#e7f2ff;color:#286199;font-size:12.5px;font-weight:700}
+    @media(max-width:1050px){.scale-legend{grid-template-columns:1fr}.model-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.loop{grid-template-columns:repeat(2,minmax(0,1fr))}.cap-grid{grid-template-columns:1fr}}
+    @media(max-width:760px){.model-grid{grid-template-columns:1fr}.cap-cols{grid-template-columns:1fr}}
+    @media(max-width:650px){.model-card{padding:17px;border-radius:15px}.cap-card{padding:17px;border-radius:16px}.loop{grid-template-columns:1fr}.scale-item b{font-size:16px}.group-head{margin:26px 0 16px}.group-head h2{font-size:20px}}
+  </style>
+<style>
+  /* 品牌名更名后顶栏加宽一档：1051—1360px 区间做紧凑化，避免导航与返回按钮被挤换行 */
+  .brand span,.brand span:last-child{white-space:nowrap}
+  @media(min-width:1051px) and (max-width:1360px){
+    .topbar{padding:0 15px;gap:13px}
+    .brand{gap:10px}
+    .brand-logo{width:110px}
+    .site-nav{gap:2px;font-size:13px}
+    .site-nav a{padding:7px 6px}
+    .topnav{gap:4px;font-size:13px}
+    .topnav a{padding:7px 8px}
+    .nav{gap:3px;font-size:13.5px}
+    .nav a{padding:7px 7px}
+    .back{padding:7px 10px;font-size:12.5px}
+  }
+  .acc-table td.txt{text-align:left;font-size:13px}
+  /* 方案关联链接（算法卡 → 能量方案详情页） */
+  .plan-links{display:flex;flex-wrap:wrap;gap:8px}
+  .plan-link{display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border:1px solid #c9e0f5;border-radius:999px;background:#f2f8ff;color:#1467c5;font-size:12.5px;font-weight:700;transition:background .15s,border-color .15s}
+  .plan-link:hover{background:#e2f0ff;border-color:#8db9e8}
+  /* 算法卡详情入口（追加于样式块末尾） */
+  .cap-card{cursor:pointer}
+  .algo-entry{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;border:1px solid #c9e0f5;border-radius:11px;background:#f2f8ff;color:#1467c5;font-size:13px;font-weight:800}
+  .algo-entry span:last-child{color:#5a7ea6;font-size:12px;font-weight:700}
+  .algo-entry:hover{background:#e2f0ff;border-color:#8db9e8}
+</style>
+</head>
+<body>
+
+  <header class="shell topbar"><a class="brand" href="index.html"><img class="brand-logo" src="swaychip-logo.png" alt="中感睿思 SWAYCHIP" /><span>EMS 智慧能源运营解决方案</span></a><nav class="site-nav" aria-label="站点导航"><a href="index.html">首页</a><a href="policy.html">政策背景</a><a href="architecture.html">业务架构</a><a href="modules.html">功能模块</a><a class="current" href="ai-strategy.html">算法预测</a><a href="energy-plan.html">能量方案</a><a href="energy-equipment.html">场站设备</a><a href="bids.html">招标信息</a></nav><a class="back" href="index.html">← 返回首页</a></header>
+
+  <main class="shell">
+    <div class="breadcrumb" aria-label="当前位置"><a href="index.html">首页</a><span class="sep">/</span><a href="modules.html">功能模块</a><span class="sep">/</span><strong>算法预测</strong></div>
+
+    <section class="hero">
+      <div class="eyebrow">ALGORITHM PREDICTION SYSTEM</div>
+      <h1>算法预测系统</h1>
+      <p class="lead">围绕微电网与电力交易两大业务场景构建九项核心算法：微电网场景以智能排程为主线，贯通光伏预测、负荷预测与辅助服务（需求响应）报量、排程；电力交易场景覆盖日前现货价格、日内现货价格、现货价差与用电负荷预测，为调度决策与交易申报提供量化支撑。在此之上，智能诊断与运维大模型面向设备与运维人员，提供故障预警、健康管理与运维知识问答能力，支撑场站安全稳定运行。</p>
+    </section>
+
+    <section class="overview">
+      <div class="overview-main">
+        <h2>两大业务场景 + 智能诊断与运维大模型</h2>
+        <p>算法预测系统按业务场景组织：微电网场景解决「站内怎么调」，以智能排程与预测支撑分布式能源协同；电力交易场景解决「市场怎么做」，以价格、价差与负荷预测支撑交易策略与风险管理。两类场景共用同一套数据底座与特征体系，预测结果相互校验、滚动修正；智能诊断与运维大模型在此之上沉淀设备健康管理与运维经验，让故障早发现、隐患早处置。</p>
+        <div class="scale-legend">
+          <div class="scale-item"><span class="scale-tag ultra">微电网场景</span><b>5 项算法</b><small>智能排程、光伏预测、负荷预测、辅助服务（需求响应）报量与排程</small></div>
+          <div class="scale-item"><span class="scale-tag short">电力交易场景</span><b>4 项算法</b><small>日前现货价格、日内现货价格、现货价差、用电负荷预测</small></div>
+          <div class="scale-item"><span class="scale-tag mid">运维大模型</span><b>2 项能力</b><small>故障预测与健康管理（PHM）、运维知识问答大模型</small></div>
+        </div>
+      </div>
+      <aside class="overview-note">
+        <b>共同运行机制</b>
+        <p>运行、业务、气象与市场数据统一入湖并做质量校验；算法按周期滚动计算并输出结果与关键影响因素；实际值回流后逐点评估偏差，触发参数在线校正与模型版本迭代。</p>
+      </aside>
+    </section>
+
+    <nav class="quick-nav" aria-label="页面导航"><a href="#schedule">智能排程</a><a href="#pv-f">光伏预测</a><a href="#load-f">负荷预测</a><a href="#dr-quote">需求响应报量</a><a href="#dr-sched">需求响应排程</a><a href="#da-price">日前现货价格</a><a href="#id-price">日内现货价格</a><a href="#spread">现货价差</a><a href="#trade-load">用电负荷预测</a><a href="#phm">故障预测与健康管理</a><a href="#ops-llm">运维知识问答大模型</a><a href="#accuracy">预测正确度</a><a href="#data">所需数据</a></nav>
+
+    <div class="group-head"><span class="group-badge">一</span><div><h2>微电网场景</h2><p>以智能排程为核心，融合光伏与负荷预测，贯通需求响应报量与排程，实现微网内分布式能源的高效协同与降本运行。</p></div></div>
+    <div class="cap-grid" id="microAlgos"></div>
+
+    <div class="group-head"><span class="group-badge">二</span><div><h2>电力交易场景</h2><p>以价格与负荷预测为支撑，覆盖日前申报、日内调整与价差套利的交易全链路，降低市场交易风险。</p></div></div>
+    <div class="cap-grid" id="tradeAlgos"></div>
+
+    <div class="group-head"><span class="group-badge">三</span><div><h2>智能诊断与运维大模型</h2><p>面向设备资产与运维人员，以故障预测与健康管理（PHM）、运维知识问答大模型为核心，把设备运行数据、运维经验与大模型能力结合，实现故障早发现、隐患早处置、经验可传承。</p></div></div>
+    <div class="cap-grid" id="opsAlgos"></div>
+
+    <section class="platform" id="accuracy">
+      <div class="platform-head"><div class="number">12</div><div><h2>预测正确度总览</h2><p>预测正确度按“1 − Σ|预测值 − 实际值| ÷ Σ实际值”的电量加权口径统计，取近 3 个月实测均值；短期按 15 分钟点 / 96 点曲线、中长期按日与月电量分别评估。电价类预测受供需与竞价行为影响较大，正确度整体低于负荷与出力类，实际使用中建议以价格区间与置信水平参与决策。</p></div></div>
+      <div class="function-table-wrap">
+        <table class="function-table acc-table">
+          <thead><tr><th scope="col">算法</th><th scope="col">预测对象与颗粒度</th><th scope="col">短期正确度</th><th scope="col">中长期正确度</th><th scope="col">分项说明</th></tr></thead>
+          <tbody id="accBody"></tbody>
+        </table>
+      </div>
+      <p class="table-note">正确度分级：<span class="grade g-a">A</span> 优秀 ≥ 92%　<span class="grade g-b">B</span> 良好 85%—92%　<span class="grade g-c">C</span> 可用 75%—85%。「—」表示该算法以日内滚动口径评估、不区分中长期档位。中长期预测受气象与市场变化影响较大，建议以电量与价格区间、置信水平使用，并配合月度滚动修正。</p>
+      <div class="platform-meta"><span>电量加权口径</span><span>近 3 个月实测均值</span><span>分场景评估</span><span>置信区间输出</span><span>电价按价格区间评估</span></div>
+    </section>
+
+    <section class="platform" id="data">
+      <div class="platform-head"><div class="number">13</div><div><h2>算法所需数据清单</h2><p>九项算法与两项运维能力共享的统一数据底座。数据接入后按设备与站点统一编码，时间戳对齐到 1 分钟并向上聚合，缺失值由相似日或线性插补补齐，限电、检修与停产时段单独打标，避免污染训练集。</p></div></div>
+      <div class="function-table-wrap">
+        <table class="function-table flow">
+          <thead><tr><th scope="col">数据类别</th><th scope="col">主要数据项</th><th scope="col">更新频率与来源</th><th scope="col">服务算法</th></tr></thead>
+          <tbody id="dataBody"></tbody>
+        </table>
+      </div>
+      <p class="table-note">数据来源以现场物联网关、SCADA、BMS/PCS、计量表计、充换电运营平台、MES 与生产系统、气象服务商、电力交易平台为主；外部数据通过统一接口按约定频率校验入库，并在接口审计中留痕。</p>
+      <div class="platform-meta"><span>1 分钟统一时标</span><span>质量校验与异常剔除</span><span>缺失插补</span><span>事件打标</span><span>接口审计</span></div>
+    </section>
+
+    <section class="platform" id="loop">
+      <div class="platform-head"><div class="number">14</div><div><h2>预测—寻优—执行—评估闭环</h2><p>预测只是输入，真正的收益来自算法闭环。算法预测系统把预测结果与约束、收益目标结合，输出可校核的排程、报量与交易策略，并以实际执行结果持续修正模型。</p></div></div>
+      <div class="loop">
+        <article class="loop-card"><i>1</i><b>预测</b><p>光伏、负荷、日前与日内价格、价差按短期与中长期滚动预测，输出期望值与置信区间。</p></article>
+        <article class="loop-card"><i>2</i><b>寻优</b><p>智能排程与需求响应报量、排程在安全、设备与合同约束内完成多目标寻优，生成最优调度与申报方案。</p></article>
+        <article class="loop-card"><i>3</i><b>执行</b><p>排程与响应计划分解为设备或资源集群指令并下发，跟踪回执、实际功率与偏差，异常时触发回退与人工接管。</p></article>
+        <article class="loop-card"><i>4</i><b>评估</b><p>对比预测、计划与实际执行，评估正确度、收益与偏差；结果回流数据底座，持续修正算法参数与版本。</p></article>
+      </div>
+    </section>
+  </main>
+  <footer class="shell footer"><span>© 2026 EMS 智慧能源运营解决方案</span><span>算法预测 · 微电网场景 · 电力交易场景 · 智能诊断与运维大模型</span></footer>
+  <script src="site-data.js"></script>
+  <script>
+    const algos = [
+      // ===== 微电网场景 =====
+      {
+        id: 'schedule', no: '01', scene: 'micro', name: '智能排程算法',
+        lead: '以安全类方案的硬边界为前提，对有序充电、储能扩容、峰谷套利、需量控制等经济类方案统一多目标寻优，实现微网内分布式能源的高效协同与运行成本最优。',
+        spec: [['算法类型', '多目标优化 + 启发式规则'], ['决策周期', '日前计划 + 日内 15 分钟滚动'], ['调度对象', '光伏 · 储能 · 充电负荷 · 可调负荷']],
+        plans: [{ id: 'order-charge', no: '03', name: '有序充电' }, { id: 'capacity', no: '04', name: '储能功率扩容' }, { id: 'arbitrage', no: '05', name: '储能峰谷套利' }, { id: 'demand', no: '06', name: '需量控制' }],
+        cols: [
+          { title: '优化目标', items: ['有序充电：按时离站满足率最大、谷段电量占比最高', '储能扩容 / 套利：循环收益最大、衰减成本可控', '需量控制：基本电费最低、不越阈值', '光伏消纳率最大、弃光电量最少'] },
+          { title: '约束条件', items: ['负荷安全控制三级阈值与脱扣顺序（硬约束）', '光伏防逆流并网点功率约束', '储能 SOC、倍率与循环次数边界', '变压器与线路容量、合同保供义务'] },
+          { title: '方案协同', items: ['需求响应时段内充电桩纳入可调资源统一削减', '光伏防逆流优先用储能吸收余电，剩余空间再执行套利', '储能扩容保供优先于峰谷套利', '需量阈值不可越，套利计划在剩余空间内修正'] },
+          { title: '输出', items: ['微网能源调度计划与执行时序', '各方案功率分配与执行优先级', '运行成本对比与降本分析'] }
+        ],
+        kpis: ['运行成本下降', '弃光电量下降', '调度指令可执行率提升']
+      },
+      {
+        id: 'pv-f', no: '02', scene: 'micro', name: '光伏预测算法',
+        lead: '结合气象数据和历史发电数据，利用机器学习算法对光伏发电量进行短期和中长期预测，提高发电规划准确性。',
+        spec: [['算法类型', '机器学习时序模型 + 气象订正'], ['预测周期', '短期（次日 0—72 小时）+ 中长期（3—30 天）'], ['输出颗粒', '15 分钟曲线 · 日 / 月电量']],
+        cols: [
+          { title: '输入', items: ['辐照度、云量、气温等气象数据', '逆变器与组串历史发电数据', '装机参数、检修与限电计划'] },
+          { title: '方法', items: ['NWP 订正 + 时序 Transformer 与 LightGBM 集成', '集合预报统计降尺度 + 相似日聚类', '限电、清洗与检修时段打标'] },
+          { title: '输出', items: ['短期出力曲线与日电量预测', '中长期月电量区间', '置信区间与偏差预警'] },
+          { title: '应用', items: ['发电计划编制与消纳评估', '储能充放电安排', '检修与备件计划参考'] }
+        ],
+        kpis: ['短期正确度 ≥ 90%', '月电量偏差 ±8%', '限电时段不污染训练集']
+      },
+      {
+        id: 'load-f', no: '03', scene: 'micro', name: '负荷预测算法',
+        lead: '基于负荷历史数据及影响因素，构建预测模型，用于短期、长期负荷需求预测，为调度和计划提供支持。',
+        spec: [['算法类型', 'LightGBM 集成 + 时序分解'], ['预测周期', '短期（96 点）+ 长期（周 / 月）'], ['建模维度', '排产 · 班制 · 气象 · 日历']],
+        cols: [
+          { title: '输入', items: ['历史负荷曲线与最大需量记录', '生产排产、班次与检修计划', '气温、湿度等气象修正项'] },
+          { title: '方法', items: ['按工作日、周末与班制分类建模', '生产节拍与设备启停事件特征嵌入', '相似日与趋势回归修正'] },
+          { title: '输出', items: ['短期 96 点负荷曲线', '长期日电量与最大需量', '需量预警与调节余量'] },
+          { title: '应用', items: ['调度计划与需量控制', '需求响应容量评估', '用能预算与容量规划'] }
+        ],
+        kpis: ['短期正确度 ≥ 94%', '月电量偏差 ±9%', '需量预警提前量提升']
+      },
+      {
+        id: 'dr-quote', no: '04', scene: 'micro', name: '辅助服务（需求响应）报量算法',
+        lead: '服务「需求响应 · 日前邀约」方案：基于负荷特性与激励机制，预测可调节负荷量，在补偿收益与违约考核风险之间寻优申报量价方案。',
+        spec: [['算法类型', '负荷特性建模 + 优化模型'], ['决策节点', '邀约解析 → 基线预测 → 能力评估 → 申报'], ['输出内容', '可调节负荷量 · 申报量价方案 · 备选与风险提示']],
+        plans: [{ id: 'dr-day', no: '07', name: '需求响应 · 日前邀约' }, { id: 'vpp', no: '09', name: '虚拟电厂调控' }],
+        cols: [
+          { title: '输入', items: ['用户负荷特性与可调节资源台账', '邀约时段、响应量、补偿与考核规则', '基线认定规则与相似日负荷'] },
+          { title: '方法', items: ['基线负荷预测：按认定规则预测基线并识别偏高风险', '分资源、分时段可调节负荷量预测', '收益—考核风险双目标申报寻优，多套备选'] },
+          { title: '输出', items: ['可调节负荷量预测结果', '最优申报量价方案与备选', '基线偏高风险提示'] },
+          { title: '应用', items: ['日前邀约申报（07）', '聚合商代理报量', '虚拟电厂对外承诺报价参考（09）'] }
+        ],
+        kpis: ['申报采纳率提升', '响应达成率 ≥ 100%', '考核扣罚为零']
+      },
+      {
+        id: 'dr-sched', no: '05', scene: 'micro', name: '辅助服务（需求响应）排程算法',
+        lead: '服务「需求响应」与「虚拟电厂调控」方案：结合实际中标情况、资源响应速度与微网运行需求，实现多用户、多时段的响应调度优化与执行偏差纠偏。',
+        spec: [['算法类型', '多用户多时段调度优化'], ['响应粒度', '秒级—分钟级 · 分资源分批次'], ['调度依据', '中标结果 + 资源特性 + 运行需求']],
+        plans: [{ id: 'dr-day', no: '07', name: '需求响应 · 日前邀约' }, { id: 'dr-interrupt', no: '08', name: '需求响应 · 可中断负荷' }, { id: 'vpp', no: '09', name: '虚拟电厂调控' }],
+        cols: [
+          { title: '输入', items: ['实际中标量与执行时段要求', '资源分布特性、响应速度与可持续时长', '微网实时运行状态与安全边界'] },
+          { title: '方法', items: ['调节量分解与资源组合寻优，实时剔除关键工序等不可中断资源', '多用户、多时段错峰编排，恢复分批防二次尖峰', '响应偏差预测与补充资源自动顶替'] },
+          { title: '输出', items: ['响应执行计划与指令时序', '分批次恢复时序', '执行进度与偏差纠偏建议'] },
+          { title: '应用', items: ['日前邀约执行（07）', '可中断负荷快速响应（08）', '虚拟电厂指令分解执行（09）'] }
+        ],
+        kpis: ['响应达成率 ≥ 100%', '二次越限为零', '资源调用均衡']
+      },
+      // ===== 电力交易场景 =====
+      {
+        id: 'da-price', no: '06', scene: 'trade', name: '日前现货价格预测算法',
+        lead: '通过分析电力市场历史交易数据和影响因子，构建模型对市场日前现货价格进行精准预测，优化交易策略。',
+        spec: [['算法类型', 'LightGBM + 时序 Transformer 集成'], ['预测对象', '日前市场 96 点出清价格'], ['更新频率', '每日申报前 1 次']],
+        cols: [
+          { title: '输入', items: ['历史交易数据与分时价格形态', '负荷、新能源出力与机组开停', '检修、备用、阻塞与燃料成本'] },
+          { title: '方法', items: ['供需平衡与影响因子特征工程', '竞价行为与节假日、极端天气修正', '输出中位值与置信区间'] },
+          { title: '输出', items: ['96 点日前价格预测', '峰谷价差与价格区间', '报价策略参考'] },
+          { title: '应用', items: ['日前申报量价决策', '储能日前充放电计划', '零售套餐与代理购电定价'] }
+        ],
+        kpis: ['常规日正确度 ≈ 90%', '极端天气日 82%', '申报偏差下降']
+      },
+      {
+        id: 'id-price', no: '07', scene: 'trade', name: '日内现货价格预测算法',
+        lead: '利用实时市场数据和动态因素分析，对电力日内市场的价格波动进行快速预测，适应市场需求变化。',
+        spec: [['算法类型', 'LSTM + 分位数回归'], ['预测对象', '日内市场 15 分钟滚动价格'], ['更新频率', '每 15 分钟滚动']],
+        cols: [
+          { title: '输入', items: ['实时市场数据与最新出清结果', '实时负荷与新能源出力', '阻塞、备用与突发供需事件'] },
+          { title: '方法', items: ['动态因素分析与快速特征更新', 'Pinball Loss 分位数区间输出', '偏差快速校正'] },
+          { title: '输出', items: ['日内价格波动快速预测', '价格区间与风险敞口', '实时调整建议'] },
+          { title: '应用', items: ['日内申报调整', '储能实时套利', '偏差与风险控制'] }
+        ],
+        kpis: ['峰段 93.5% / 谷段 88.6%', '15 分钟滚动刷新', '风险敞口可控']
+      },
+      {
+        id: 'spread', no: '08', scene: 'trade', name: '现货价差预测算法',
+        lead: '通过分析不同时间段电力市场的价格走势，预测价差变化趋势，提供套利机会识别和风险管理支持。',
+        spec: [['算法类型', '价格走势分析 + 价差建模'], ['预测对象', '峰谷价差与时段价差走势'], ['输出内容', '价差趋势 · 套利窗口']],
+        cols: [
+          { title: '输入', items: ['不同时段历史价格与价差分布', '负荷与新能源出力预测', '市场规则与政策调整'] },
+          { title: '方法', items: ['分时段价格走势相关分析', '价差方向与幅度概率建模', '无效套利窗口剔除'] },
+          { title: '输出', items: ['价差变化趋势预测', '套利机会识别与排序', '风险管理提示'] },
+          { title: '应用', items: ['储能峰谷套利决策', '现货联动策略', '价差交易风险管理'] }
+        ],
+        kpis: ['套利窗口命中率提升', '无效循环占比 ≤ 10%', '风险提示全覆盖']
+      },
+      {
+        id: 'trade-load', no: '09', scene: 'trade', name: '用电负荷预测算法',
+        lead: '基于历史用电数据、气象条件、经济指标等多维数据，构建负荷预测模型，精准预测短期和中长期用电需求变化，为电力交易计划的制定提供数据支撑，降低市场交易风险。',
+        spec: [['算法类型', '多维数据融合预测模型'], ['预测周期', '短期（日）+ 中长期（周 / 月）'], ['数据维度', '用电 · 气象 · 经济指标']],
+        cols: [
+          { title: '输入', items: ['历史用电数据与分时曲线', '气象条件与温度敏感性', '经济指标、生产与扩产计划'] },
+          { title: '方法', items: ['多维特征融合 + 分类建模', '相似日与季节趋势修正', '电量区间与置信水平输出'] },
+          { title: '输出', items: ['短期与中长期用电需求预测', '电量区间与风险提示', '交易计划数据支撑'] },
+          { title: '应用', items: ['电力交易计划编制', '月度交易与中长期持仓', '偏差考核风险管理'] }
+        ],
+        kpis: ['短期正确度 ≥ 93%', '月电量偏差 ±9%', '交易风险下降']
+      },
+      // ===== 智能诊断与运维大模型 =====
+      {
+        id: 'phm', no: '10', scene: 'ops', name: '故障预测与健康管理（PHM）',
+        lead: '基于设备运行、工况与环境数据构建健康度评估与故障预测模型，对光伏、储能、充电桩、变压器等关键设备实现劣化趋势预警、故障定位与处置联动。',
+        spec: [['算法类型', '机理模型 + 机器学习异常检测'], ['覆盖对象', '光伏 · 储能 · 充电桩 · 变压器'], ['预警方式', '分级预警 + 劣化趋势预测']],
+        cols: [
+          { title: '诊断对象', items: ['光伏组串与逆变器：功率衰减、热斑、组串离散率异常', '储能电池：一致性劣化、内阻异常、热失控前兆', '充电桩：功率模块故障、枪头温升、启停失败', '变压器：油温与油色谱、负载率与绕组温度异常'] },
+          { title: '健康度与预警', items: ['设备健康度评分与 SOH 评估', '三级预警阈值与劣化趋势预测', '故障定位与根因初判', '关键设备剩余使用寿命（RUL）估计'] },
+          { title: '处置联动', items: ['预警工单自动派发与闭环跟踪', '联动能量方案切换备用策略与功率限制', '备品备件与检修计划建议', '重要告警推送运营与值守人员'] },
+          { title: '输出', items: ['设备健康档案与劣化曲线', '故障预警报告与处置建议', '检修优先级排序与备件需求'] }
+        ],
+        kpis: ['故障预警提前量提升', '非计划停机时长下降', '预警误报率可控']
+      },
+      {
+        id: 'ops-llm', no: '11', scene: 'ops', name: '运维知识问答大模型',
+        lead: '以大语言模型为底座，融合设备手册、运行规程、历史工单与故障案例构建运维知识库，通过 RAG 检索增强与领域微调，为运维人员提供自然语言问答与辅助决策。',
+        spec: [['技术路线', 'RAG 检索增强 + 领域微调'], ['知识底座', '设备手册 · 规程 · 工单 · 台账'], ['交互方式', '自然语言问答 · 预警解读 · 辅助决策']],
+        cols: [
+          { title: '知识底座', items: ['设备说明书、运维规程与作业票模板', '历史工单、故障案例与处置记录', '设备台账、参数与保护定值'] },
+          { title: '核心能力', items: ['故障现象描述与处置步骤问答', '预警与告警的自动解读与处置建议', '检修方案与作业风险提示生成', '新员工培训与规程考核辅助'] },
+          { title: '安全治理', items: ['答案溯源：引用原文与来源文档', '敏感操作与定值修改仅提示、不执行', '知识库权限隔离与访问审计'] },
+          { title: '数据迭代', items: ['工单闭环结果回流丰富案例库', '纠错反馈标注驱动模型迭代', '知识文档版本管理与定期校核'] }
+        ],
+        kpis: ['常见故障问答覆盖率 ≥ 90%', '处置方案引用可溯源', '重复性咨询工单下降']
+      }
+    ];
+
+    const accRows = [
+      ['光伏预测算法', '发电量 · 15 分钟—日 / 月电量', '91.6', '82.4', '晴天 94.2% / 多云 86.5%，月度电量偏差 ±8% 以内'],
+      ['负荷预测算法', '场站负荷 · 15 分钟—日', '94.6', '88.3', '计划性生产 96.2% / 订单波动期 91.8%，月电量偏差 ±9% 以内'],
+      ['日前现货价格预测算法', '日前市场 96 点价格', '87.4', '79.6', '常规日 89.8% / 极端天气日 82.1%，月均价区间命中率 78%'],
+      ['日内现货价格预测算法', '日内市场 15 分钟价格', '91.3', null, '峰段 93.5% / 谷段 88.6%，以日内滚动口径评估'],
+      ['现货价差预测算法', '峰谷价差与套利窗口', '85.6', '78.9', '以价差方向与套利窗口识别命中率评估'],
+      ['用电负荷预测算法', '用电量 · 日 / 月', '93.8', '87.5', '与负荷预测算法共用模型底座，叠加经济指标特征']
+    ];
+
+    const dataRows = [
+      ['气象与环境', '辐照度、组件背板温度、环境温度、湿度、风速、云量与降水；NWP 与集合预报数据', '1—15 分钟 / 1—6 小时预报，气象服务商 + 站内气象站', '光伏预测、用电负荷预测'],
+      ['光伏运行数据', '逆变器与组串功率、电流、电压、发电量、可用率、发电损失与清洗记录', '1—15 分钟，SCADA / 物联网关（IEC 104、Modbus）', '光伏预测算法'],
+      ['储能与变配电数据', '储能 SOC / SOH、PCS 充放电功率、单体温度、并网点有功无功、电能质量', '秒级—1 分钟，BMS / PCS / 计量表计', '智能排程、光伏预测'],
+      ['充换电业务数据', '充换电订单、电量、功率、桩枪状态与在线率、排队与预约、车辆 SOC 与续驶里程', '实时 / 事件触发，充换电运营平台', '智能排程、负荷预测、需求响应报量与排程'],
+      ['生产与用能数据', '产线与关键设备功率、MES 排产与节拍、工单进度、班次排班、96 点负荷与最大需量', '1—15 分钟 / 按日，MES、计量表计与用能系统', '负荷预测、用电负荷预测'],
+      ['市场与价格数据', '分时电价与尖峰时段、现货出清价、需求响应邀约与补偿规则、零售套餐与结算规则', '15 分钟 / 按日，电力交易平台与代理协议', '需求响应报量与排程、现货价格与价差预测'],
+      ['日历与事件数据', '工作日与节假日、重大活动、天气预警、限电安排、检修与停产、营销促销计划', '按日 / 事件触发，运营日历与生产计划', '负荷预测、用电负荷预测'],
+      ['台账与约束数据', '装机容量、设备参数与衰减曲线、控制边界与 SOC 限值、合同授权与调节能力、站点画像', '变更时同步，资产台账与合同系统', '全部算法（校核与约束）'],
+      ['现货市场数据', '日前与实时出清价、供需平衡与备用需求、阻塞与联络线计划、机组开停与检修、燃料成本、市场公告', '15 分钟 / 按日，电力交易平台与市场信息披露', '现货价格与价差预测、智能排程'],
+      ['成本与合约数据', '燃料与购电成本、合约持仓与分解曲线、零售套餐与代理合同、偏差考核与结算规则', '按日 / 变更时同步，交易与财务系统', '智能排程、用电负荷预测'],
+      ['设备健康数据', '设备故障码与告警、油色谱与局放检测、电池单体电压 / 内阻 / 温度、组串离散率、桩枪温升与故障记录、检修与更换记录', '秒级—按日 / 事件触发，SCADA、BMS/PCS 与运维管理系统', '故障预测与健康管理（PHM）'],
+      ['运维知识文本', '设备手册与运行规程、历史工单与故障案例、作业票与验收标准、设备台账与保护定值', '按文档版本更新，运维管理系统与知识库', '运维知识问答大模型']
+    ];
+
+    const esc = value => String(value).replace(/[&<>"']/g, char => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[char]));
+    const grade = value => value >= 92 ? ['A', 'g-a'] : (value >= 85 ? ['B', 'g-b'] : ['C', 'g-c']);
+
+    const renderAlgo = a => `<article class="cap-card" id="${a.id}">
+      <div class="cap-head"><span class="cap-no">${esc(a.no)}</span><div><h3>${esc(a.name)}</h3><p>${esc(a.lead)}</p></div></div>
+      <dl class="model-spec cap-spec">${a.spec.map(([key, value]) => `<div><dt>${esc(key)}</dt><dd>${esc(value)}</dd></div>`).join('')}</dl>
+      ${a.plans ? `<div class="plan-links">${a.plans.map(p => `<a class="plan-link" href="energy-plan-detail.html?id=${esc(p.id)}">${esc(p.no)} ${esc(p.name)} →</a>`).join('')}</div>` : ''}
+      <div class="cap-cols">${a.cols.map(col => `<div><h4>${esc(col.title)}</h4><ul>${col.items.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>`).join('')}</div>
+      <div class="cap-kpi">${a.kpis.map(kpi => `<span>${esc(kpi)}</span>`).join('')}</div>
+      <a class="algo-entry" href="algo-detail.html?id=${a.id}"><span>查看算法详细设计</span><span>定位 · 流程 · 方法 · KPI →</span></a>
+    </article>`;
+
+    document.querySelector('#microAlgos').innerHTML = algos.filter(a => a.scene === 'micro').map(renderAlgo).join('');
+    document.querySelector('#tradeAlgos').innerHTML = algos.filter(a => a.scene === 'trade').map(renderAlgo).join('');
+    document.querySelector('#opsAlgos').innerHTML = algos.filter(a => a.scene === 'ops').map(renderAlgo).join('');
+
+    // 整卡可点击进入算法详情页（卡片内已有链接时不拦截）
+    document.querySelectorAll('.cap-card').forEach(card => card.addEventListener('click', e => {
+      if (e.target.closest('a')) return;
+      location.href = 'algo-detail.html?id=' + card.id;
+    }));
+
+    document.querySelector('#accBody').innerHTML = accRows.map(row => {
+      const [name, obj, short, mid, note] = row;
+      const cell = v => {
+        if (!v) return '<td>—</td>';
+        const [mark, cls] = grade(Number(v));
+        return `<td>${v}%<span class="grade ${cls}">${mark}</span></td>`;
+      };
+      return `<tr><th scope="row">${esc(name)}</th><td class="txt">${esc(obj)}</td>${cell(short)}${cell(mid)}<td class="txt">${esc(note)}</td></tr>`;
+    }).join('');
+
+    document.querySelector('#dataBody').innerHTML = dataRows.map(row => `<tr><th scope="row">${esc(row[0])}</th><td>${esc(row[1])}</td><td>${esc(row[2])}</td><td>${esc(row[3])}</td></tr>`).join('');
+
+    window.EMSLocalData.persistPage({ id: 'ai-strategy.html', kind: 'algorithm-prediction' });
+  </script>
+</body>
+</html>
