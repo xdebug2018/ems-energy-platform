@@ -133,6 +133,39 @@
   .sway-card li+li{margin-top:3px}
   @media(max-width:1050px){.sway-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
   @media(max-width:700px){.sway-grid{grid-template-columns:1fr}.sway-card{padding:16px}}
+
+  /* ===== 接入流程面板：一图读懂《安徽省虚拟电厂建设运营管理实施方案》长图查看器 ===== */
+  .infographic{margin:0 0 22px;padding:20px;border:1px solid #cfe2f4;border-radius:16px;background:linear-gradient(165deg,#f7fbff,#fff 62%);box-shadow:0 10px 24px rgba(25,90,160,.06)}
+  .info-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:13px}
+  .info-head h3{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin:0;color:#0b3e81;font-size:19px;line-height:1.45}
+  .info-head h3 em{padding:3px 8px;border-radius:6px;background:#e8f3ff;color:#2464a4;font-size:12px;font-weight:800;font-style:normal;white-space:nowrap}
+  .info-head p{margin:7px 0 0;color:#49667f;font-size:14px;line-height:1.7}
+  .info-actions{display:flex;gap:8px;flex-wrap:wrap;flex:none;max-width:100%}
+  .info-btn{padding:8px 13px;border:1px solid #c7def4;border-radius:9px;background:#fff;color:#1766b7;font:700 13px/1.25 "Microsoft YaHei UI","Microsoft YaHei",sans-serif;cursor:pointer;white-space:nowrap;text-decoration:none;transition:.18s ease}
+  .info-btn:hover{background:#eaf4ff;border-color:#9cc4ec}
+  .info-btn.primary{background:#1766b7;border-color:#1766b7;color:#fff;box-shadow:0 4px 11px rgba(23,102,183,.18)}
+  .info-btn.primary:hover{background:#1257a0}
+  .info-nav{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 12px}
+  .info-nav button{padding:6px 11px;border:1px solid #d5e4f2;border-radius:99px;background:#fff;color:#3d6386;font:600 12.5px/1.3 "Microsoft YaHei UI","Microsoft YaHei",sans-serif;cursor:pointer;transition:.18s ease}
+  .info-nav button:hover{background:#edf6ff;color:#1766b7;border-color:#b8d7f2}
+  .info-nav button.active{background:#1766b7;border-color:#1766b7;color:#fff}
+  .info-frame{position:relative;max-height:600px;overflow:auto;border:1px solid #d5e4f2;border-radius:12px;background:#eef5fc;overscroll-behavior:contain}
+  .info-frame:focus-visible{outline:2px solid #2476c9;outline-offset:2px}
+  .info-frame img{display:block;width:100%;height:auto;background:#fff}
+  .infographic.expanded .info-frame{max-height:none}
+  .info-caption{margin:12px 0 0;color:#5c748d;font-size:13px;line-height:1.7}
+  .info-caption b{color:#1b548f}
+  @media(max-width:1050px){
+    .info-head{flex-direction:column;gap:10px}
+    .info-frame{max-height:520px}
+  }
+  @media(max-width:700px){
+    .infographic{padding:15px;border-radius:14px}
+    .info-head h3{font-size:17px}
+    .info-actions{width:100%}
+    .info-btn{flex:1 1 auto;text-align:center;padding:9px 11px}
+    .info-frame{max-height:440px}
+  }
 </style>
 </head>
 <body>
@@ -163,6 +196,37 @@
       <div><b>超 180 万千瓦</b><span>签约需求响应规模</span></div>
       <div><b>200 万千瓦</b><span>2030 年全省调节能力目标</span></div>
     </div>
+
+    <figure class="infographic" id="vpp-infographic">
+      <div class="info-head">
+        <div>
+          <h3>一图读懂｜安徽省虚拟电厂建设运营管理实施方案<em>皖能源电调〔2026〕34 号</em></h3>
+          <p>省能源局官方图解，按「各方职责 → 建设要求 → 接入流程 → 注册及变更 → 交易结算 → 运行安全 → 评价及退出 → 信息披露」八个部分逐项拆解，可与下方接入指引各环节对照阅读。</p>
+        </div>
+        <div class="info-actions">
+          <button class="info-btn" type="button" id="info-zoom-out" aria-label="缩小长图">－ 缩小</button>
+          <button class="info-btn" type="button" id="info-fit" aria-label="适应宽度">适应宽度</button>
+          <button class="info-btn" type="button" id="info-zoom-in" aria-label="放大长图">＋ 放大</button>
+          <button class="info-btn primary" type="button" id="info-expand" aria-expanded="false" aria-controls="info-frame">展开全图</button>
+          <a class="info-btn" href="一图读懂安徽省虚拟电厂建设运营管理实施方案.jpg" target="_blank" rel="noopener">原图新窗口 ↗</a>
+        </div>
+      </div>
+      <div class="info-nav" aria-label="长图章节快速定位">
+        <button type="button" data-y="860">01 各方职责</button>
+        <button type="button" data-y="3092">02 建设要求</button>
+        <button type="button" data-y="4080">03 接入流程</button>
+        <button type="button" data-y="4980">04 注册及变更</button>
+        <button type="button" data-y="7036">05 交易结算</button>
+        <button type="button" data-y="9732">06 运行安全</button>
+        <button type="button" data-y="11532">07 评价及退出</button>
+        <button type="button" data-y="13588">08 信息披露</button>
+      </div>
+      <div class="info-frame" id="info-frame" role="region" tabindex="0" aria-label="一图读懂长图，可在框内滚动查看">
+        <img id="info-img" src="一图读懂安徽省虚拟电厂建设运营管理实施方案.jpg" alt="一图读懂《安徽省虚拟电厂建设运营管理实施方案》（皖能源电调〔2026〕34 号）：各方职责、建设要求、接入流程、注册及变更、交易结算、运行安全、评价及退出、信息披露" width="1280" height="14704" decoding="sync" fetchpriority="low" />
+      </div>
+      <figcaption class="info-caption"><b>查看方式：</b>框内可上下滚动；点上方章节按钮可快速定位到对应部分；「放大／缩小」调整长图比例（100%—300%），「展开全图」将整张长图按原比例铺开。原图 1280 × 14704 px，长图内容以省能源局发布的原文图解为准。</figcaption>
+    </figure>
+
     <div class="anhui-access-grid">
 
       <article class="anhui-access-card wide-card"><h3><span>01</span>政策依据与职责分工</h3>
@@ -495,6 +559,60 @@
     panels['参与策略'].append(strategy);
     hero.insertAdjacentElement('afterend',policyTabs);
     policyTabs.insertAdjacentElement('afterend',panelContainer);
+    /* 接入流程面板：一图读懂长图查看器（章节定位 / 缩放 / 展开全图） */
+    const infoFig=document.querySelector('#vpp-infographic');
+    if(infoFig){
+      const infoFrame=infoFig.querySelector('#info-frame');
+      const infoImg=infoFig.querySelector('#info-img');
+      const expandBtn=infoFig.querySelector('#info-expand');
+      const NATURAL_H=14704, ZOOM_MIN=100, ZOOM_MAX=300;
+      let infoZoom=100;
+      /* 平滑滚动 + 兜底：少数环境不执行 smooth，260ms 内未位移则直接落位 */
+      const scrollFrameTo=(top)=>{
+        const before=infoFrame.scrollTop;
+        try{infoFrame.scrollTo({top:top,behavior:'smooth'});}catch(err){infoFrame.scrollTop=top;}
+        window.setTimeout(()=>{
+          if(Math.abs(infoFrame.scrollTop-before)<2&&Math.abs(top-before)>2){infoFrame.scrollTop=top;}
+        },260);
+      };
+      const scrollWindowTo=(top)=>{
+        const before=window.scrollY;
+        try{window.scrollTo({top:top,behavior:'smooth'});}catch(err){window.scrollTo(0,top);}
+        window.setTimeout(()=>{
+          if(Math.abs(window.scrollY-before)<2&&Math.abs(top-before)>2){window.scrollTo(0,top);}
+        },260);
+      };
+      const setZoom=(next)=>{
+        const max=infoFrame.scrollHeight-infoFrame.clientHeight;
+        const keep=max>0?infoFrame.scrollTop/max:0;
+        infoZoom=Math.max(ZOOM_MIN,Math.min(ZOOM_MAX,next));
+        infoImg.style.width=infoZoom+'%';
+        const max2=infoFrame.scrollHeight-infoFrame.clientHeight;
+        infoFrame.scrollTop=keep*max2;
+      };
+      infoFig.querySelectorAll('.info-nav button').forEach((btn)=>{
+        btn.addEventListener('click',()=>{
+          const ratio=Number(btn.dataset.y)/NATURAL_H;
+          infoFig.querySelectorAll('.info-nav button').forEach((other)=>other.classList.toggle('active',other===btn));
+          if(infoFig.classList.contains('expanded')){
+            const box=infoImg.getBoundingClientRect();
+            scrollWindowTo(Math.max(0,box.top+window.scrollY+ratio*box.height-110));
+          }else{
+            const imgH=infoImg.getBoundingClientRect().height;
+            scrollFrameTo(Math.max(0,ratio*imgH-14));
+          }
+        });
+      });
+      infoFig.querySelector('#info-zoom-in').addEventListener('click',()=>setZoom(infoZoom+25));
+      infoFig.querySelector('#info-zoom-out').addEventListener('click',()=>setZoom(infoZoom-25));
+      infoFig.querySelector('#info-fit').addEventListener('click',()=>{setZoom(ZOOM_MIN);infoFrame.scrollTop=0;});
+      expandBtn.addEventListener('click',()=>{
+        const on=infoFig.classList.toggle('expanded');
+        expandBtn.textContent=on?'收起全图':'展开全图';
+        expandBtn.setAttribute('aria-expanded',String(on));
+        if(on){scrollWindowTo(Math.max(0,infoFig.getBoundingClientRect().top+window.scrollY-16));}
+      });
+    }
     window.EMSLocalData.persistPage({ id: 'policy.html', kind: 'policy-background' });
   </script>
 </body>
