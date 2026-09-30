@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EMS 智慧能源运营解决方案能量方案：负荷安全控制、有序充电、储能功率扩容、储能峰谷套利、需量控制、需求侧响应（日前邀约与可中断负荷）、光伏控制、虚拟电厂调控九类策略的业务流程与 AI 作用环节。" />
+  <title>能量方案｜EMS 智慧能源运营解决方案</title>
+  <style>
+    :root{--blue:#1467c5;--deep:#0b3e81;--ink:#153b67;--muted:#45627c;--line:#d5e4f2}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#f8fcff 0,#edf6ff 32rem,#fff 74rem);color:var(--ink);font:16px/1.65 "Microsoft YaHei","微软雅黑","Segoe UI",Arial,sans-serif}.shell{max-width:1320px;margin:auto;padding:0 34px}a{color:inherit;text-decoration:none}.topbar{height:68px;margin-top:16px;padding:0 20px;border:1px solid #d8e7f5;border-radius:18px;background:rgba(255,255,255,.94);box-shadow:0 8px 28px rgba(25,90,160,.08);display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:14px;font-weight:700;color:#173e6c}.brand-logo{width:130px;height:auto;display:block}.site-nav{display:flex;align-items:center;gap:6px;color:#1f4c79;font-size:14px;font-weight:600}.site-nav a{padding:8px 9px;border-radius:8px}.site-nav a:hover,.site-nav a.current{background:#eaf4ff;color:#0f5fac}.back{padding:8px 12px;border:1px solid #d5e6f5;border-radius:9px;background:#fff;color:#23588f;font-size:14px;font-weight:600}.breadcrumb{display:flex;align-items:center;gap:7px;padding-top:18px;color:#58738d;font-size:14px;font-weight:500}.breadcrumb strong{color:#1b548f}.sep{color:#9db1c4}.hero{padding:60px 0 30px}.eyebrow{color:var(--blue);font-size:13px;font-weight:800;letter-spacing:.08em}.hero h1{margin:9px 0 12px;color:var(--deep);font-size:clamp(34px,5vw,54px);line-height:1.15;letter-spacing:-.03em}.lead{max-width:900px;margin:0;color:#244d78;font-size:18px;font-weight:500;line-height:1.75}.overview{display:grid;grid-template-columns:1.25fr .75fr;gap:22px;margin:8px 0 34px}.overview-main,.overview-note{padding:24px;border:1px solid #c9e0f5;border-radius:18px;background:rgba(255,255,255,.86);box-shadow:0 14px 32px rgba(25,90,160,.07)}.overview-main h2{margin:0 0 8px;color:#123f75;font-size:20px}.overview p{margin:0;color:#46647e;font-size:15px;font-weight:500}.overview-note{background:linear-gradient(145deg,#ecf8f2,#fff);border-color:#b9e1ce}.overview-note b{display:block;margin-bottom:6px;color:#166445;font-size:17px}.module-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.module-tabs button{cursor:pointer;padding:8px 12px;border:1px solid #cfe1f3;border-radius:999px;background:#fff;color:#3a6188;font:700 13px/1.35 inherit}.module-tabs button:hover,.module-tabs button[aria-selected="true"]{border-color:var(--blue);background:#eaf4ff;color:#0f5fac}.platform{margin:0 0 28px;padding:30px;border:1px solid #c9e0f5;border-radius:22px;background:linear-gradient(145deg,rgba(239,247,255,.94),#fff 58%);box-shadow:0 18px 42px rgba(25,90,160,.08)}.platform-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:17px;align-items:start;margin-bottom:12px}.number{display:grid;place-items:center;width:47px;height:47px;border-radius:14px;background:#1467c5;color:#fff;font-size:16px;font-weight:800;box-shadow:0 7px 16px rgba(20,103,197,.22)}.platform h2{margin:0;color:var(--deep);font-size:26px;line-height:1.3}.platform-head p,.table-note{margin:5px 0 0;color:#45627c;font-size:15px;font-weight:500}.table-note{margin:0 0 16px}.function-table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px;background:#fff}.function-table{width:100%;min-width:880px;border-collapse:collapse;font-size:14px;line-height:1.65}.function-table th,.function-table td{padding:13px 15px;border-right:1px solid #e1ebf4;border-bottom:1px solid #e1ebf4;text-align:left;vertical-align:top}.function-table thead th{position:sticky;top:0;background:#e8f3ff;color:#114c8d;font-size:14px}.function-table tbody th{width:18%;background:#f6faff;color:#184d84;font-weight:800}.function-table tbody th+th{width:23%;background:#fcfdff;color:#265f97;font-weight:700}.function-table td{width:59%;color:#45627c;font-weight:500}.function-table tr:last-child>*{border-bottom:0}.function-table tr>*:last-child{border-right:0}.platform-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.platform-meta span{padding:6px 10px;border-radius:999px;background:#e7f2ff;color:#286199;font-size:13px;font-weight:700}.footer{display:flex;justify-content:space-between;gap:18px;padding:22px 0;color:#365c80;border-top:1px solid var(--line);font-size:13px;font-weight:500}@media(max-width:1050px){.site-nav{display:none}.overview{grid-template-columns:1fr}}@media(max-width:650px){.shell{padding:0 18px}.topbar{height:60px;margin:10px 12px 0;padding:0 12px}.brand-logo{width:105px}.brand span{display:none}.back{font-size:12px;padding:7px 9px}.breadcrumb{padding-top:14px;font-size:13px}.hero{padding:46px 0 24px}.lead{font-size:16px}.overview-main,.overview-note,.platform{padding:18px;border-radius:16px}.platform h2{font-size:22px}.function-table{font-size:13px}.function-table th,.function-table td{padding:11px 12px}.footer{display:block}.footer span{display:block}.footer span+span{margin-top:5px}}
+  </style>
+  <style>
+    /* 快速导航 */
+    .quick-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px}.quick-nav a{padding:8px 13px;border:1px solid #cfe1f3;border-radius:999px;background:#fff;color:#3a6188;font-size:13px;font-weight:700}.quick-nav a:hover{border-color:var(--blue);background:#eaf4ff;color:#0f5fac}
+    /* 三档时间尺度说明 */
+    .scale-legend{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin-top:16px}.scale-item{padding:13px 14px;border:1px solid #d7e7f7;border-radius:13px;background:#f7fbff}.scale-item b{display:block;margin:8px 0 3px;color:#123f75;font-size:17px;line-height:1.3}.scale-item small{display:block;color:#4d6c8b;font-size:13px;font-weight:500;line-height:1.5}.scale-tag{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.02em;white-space:nowrap}.scale-tag.ultra{background:#e4f0ff;color:#1467c5}.scale-tag.short{background:#e3f5ec;color:#15734f}.scale-tag.mid{background:#fdf0e0;color:#b46a12}
+    /* 预测模型卡片 */
+    .model-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:4px}.model-card{display:flex;flex-direction:column;gap:14px;padding:22px;border:1px solid #d5e4f2;border-radius:18px;background:#fff;box-shadow:0 10px 26px rgba(25,90,160,.06);transition:box-shadow .2s,transform .2s}.model-card:hover{transform:translateY(-2px);box-shadow:0 18px 36px rgba(25,90,160,.13)}.model-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.model-horizon{color:#3d6287;font-size:13px;font-weight:700;text-align:right}.model-card h3{margin:0;color:var(--deep);font-size:18px;line-height:1.4}.model-spec{margin:0;display:grid;gap:8px}.model-spec>div{display:grid;grid-template-columns:74px minmax(0,1fr);gap:10px;align-items:start}.model-spec dt{color:#6b8299;font-size:13px;font-weight:700}.model-spec dd{margin:0;color:#2f587f;font-size:13.5px;font-weight:500;line-height:1.6}.accuracy{padding:13px 14px;border:1px solid #d9e8f7;border-radius:13px;background:#f7fbff}.acc-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px}.acc-head span{color:#5a7590;font-size:13px;font-weight:700}.acc-head b{color:#0f5fac;font-size:22px;font-weight:800;letter-spacing:-.01em}.bar{position:relative;height:8px;margin:9px 0 7px;border-radius:999px;background:#e4eef8;overflow:hidden}.bar i{position:absolute;top:0;bottom:0;left:0;border-radius:999px;background:linear-gradient(90deg,#4a9ae8,#0f5fac)}.bar i.s{background:linear-gradient(90deg,#54c08a,#16885b)}.bar i.m{background:linear-gradient(90deg,#f0b164,#d87a16)}.accuracy small{display:block;color:#4f6c88;font-size:12.5px;font-weight:500;line-height:1.55}.model-block h4{margin:0 0 7px;color:#123f75;font-size:14px;font-weight:800}.model-block ul{margin:0;padding-left:17px;display:grid;gap:5px}.model-block li{color:#3c5e80;font-size:13.5px;font-weight:500;line-height:1.6}.model-block p{margin:0;color:#3c5e80;font-size:13.5px;font-weight:500;line-height:1.65}.model-foot{margin-top:auto;display:flex;flex-wrap:wrap;gap:7px}.model-foot span{padding:5px 9px;border-radius:999px;background:#eef5fd;color:#2b6297;font-size:12px;font-weight:700}
+    /* 正确度矩阵 */
+    .function-table.flow th,.function-table.flow td{width:auto}.function-table.flow tbody th{width:16%}
+    .acc-table td,.acc-table thead th{text-align:center}.acc-table tbody th{width:22%;text-align:left}.acc-table td{width:auto}.acc-table .avg{background:#f6faff;color:#114c8d;font-weight:800}.acc-table .grade{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:999px;font-size:11px;font-weight:800;vertical-align:1px}.g-a{background:#e3f5ec;color:#15734f}.g-b{background:#e4f0ff;color:#1467c5}.g-c{background:#fdf0e0;color:#b46a12}
+    .loop{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:4px}.loop-card{padding:18px;border:1px solid #d5e4f2;border-radius:15px;background:#fff;box-shadow:0 8px 20px rgba(25,90,160,.05)}.loop-card b{display:block;margin-bottom:5px;color:#123f75;font-size:16px}.loop-card p{margin:0;color:#3c5e80;font-size:13.5px;font-weight:500;line-height:1.6}.loop-card i{display:grid;place-items:center;width:30px;height:30px;margin-bottom:10px;border-radius:9px;background:#e8f3ff;color:#1467c5;font-size:14px;font-weight:800;font-style:normal}
+    /* 能力分组标题 */
+    .group-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:center;margin:34px 0 20px;padding-bottom:13px;border-bottom:2px solid #dbeafe}.group-badge{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:#e8f3ff;color:#1467c5;font-size:17px;font-weight:800}.group-head h2{margin:0;color:var(--deep);font-size:24px;line-height:1.3}.group-head p{margin:4px 0 0;color:#45627c;font-size:15px;font-weight:500}
+    /* 策略与运维能力卡片 */
+    .cap-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:4px}.cap-card{display:flex;flex-direction:column;gap:15px;padding:24px;border:1px solid #c9e0f5;border-radius:20px;background:linear-gradient(145deg,#fff,#f7fbff 72%);box-shadow:0 12px 30px rgba(25,90,160,.07);transition:box-shadow .2s,transform .2s}.cap-card:hover{transform:translateY(-2px);box-shadow:0 18px 38px rgba(25,90,160,.13)}.cap-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start}.cap-no{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:#1467c5;color:#fff;font-size:15px;font-weight:800;box-shadow:0 6px 14px rgba(20,103,197,.22)}.cap-head h3{margin:0;color:var(--deep);font-size:20px;line-height:1.35}.cap-head p{margin:5px 0 0;color:#45627c;font-size:14px;font-weight:500;line-height:1.65}.cap-spec{margin:0;display:grid;gap:8px;padding:14px;border:1px solid #dbe9f6;border-radius:13px;background:#f7fbff}.cap-spec>div{grid-template-columns:88px minmax(0,1fr)}.cap-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.cap-cols h4{margin:0 0 7px;color:#123f75;font-size:14px;font-weight:800}.cap-cols ul{margin:0;padding-left:16px;display:grid;gap:4px}.cap-cols li{color:#3c5e80;font-size:13px;font-weight:500;line-height:1.6}.cap-kpi{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px}.cap-kpi span{padding:6px 10px;border-radius:999px;background:#e7f2ff;color:#286199;font-size:12.5px;font-weight:700}
+    @media(max-width:1050px){.scale-legend{grid-template-columns:1fr}.model-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.loop{grid-template-columns:repeat(2,minmax(0,1fr))}.cap-grid{grid-template-columns:1fr}}
+    @media(max-width:760px){.model-grid{grid-template-columns:1fr}.cap-cols{grid-template-columns:1fr}}
+    @media(max-width:650px){.model-card{padding:17px;border-radius:15px}.cap-card{padding:17px;border-radius:16px}.loop{grid-template-columns:1fr}.scale-item b{font-size:16px}.group-head{margin:26px 0 16px}.group-head h2{font-size:20px}}
+  </style>
+  <style>
+    /* ===== 能量方案页面 ===== */
+    .plan-nav a.cur{background:#eaf4ff;border-color:#9cc7ee;color:#0f5fac}
+    .platform{scroll-margin-top:20px}
+    .mx-table thead th,.mx-table td{text-align:left}
+    .mx-table tbody th{width:22%}
+    .mx-no{display:inline-grid;place-items:center;min-width:27px;height:27px;margin-right:8px;padding:0 6px;border-radius:8px;background:#e8f3ff;color:#1467c5;font-size:12px;font-weight:800;vertical-align:-7px}
+    .plan-cat{margin-left:9px;padding:3px 10px;border-radius:999px;background:#e8f3ff;color:#1b5b9e;font-size:12px;font-weight:800;vertical-align:3px;white-space:nowrap}
+    .plan-grid{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:18px;align-items:start;margin-top:2px}
+    .plan-spec{margin:0;padding:15px;border:1px solid #dbe9f6;border-radius:14px;background:#f7fbff}
+    .plan-spec>div{grid-template-columns:84px minmax(0,1fr)}
+    .plan-flow{display:grid;gap:11px}
+    .flow-title{margin:0;display:flex;align-items:baseline;flex-wrap:wrap;gap:9px;color:#123f75;font-size:15px;font-weight:800}
+    .flow-title span{color:#6c88a1;font-size:12.5px;font-weight:600}
+    .flow-title span i{display:inline-block;width:9px;height:9px;margin-right:5px;border-radius:50%;background:linear-gradient(135deg,#1467c5,#3f92e6);vertical-align:1px}
+    .flow-list{margin:0;padding:0;list-style:none}
+    .flow-row{position:relative;display:grid;grid-template-columns:30px minmax(0,1fr);gap:11px;padding-bottom:13px}
+    .flow-row:last-child{padding-bottom:0}
+    .flow-row::before{content:'';position:absolute;left:14px;top:33px;bottom:3px;width:2px;border-radius:2px;background:#dbe9f6}
+    .flow-row:last-child::before{display:none}
+    .flow-dot{position:relative;z-index:1;display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:#eef4fb;border:1px solid #dbe9f6;color:#3a628c;font-size:13px;font-weight:800}
+    .flow-body{padding:9px 13px;border:1px solid #e2edf8;border-radius:13px;background:#fbfdff}
+    .flow-body h5{margin:0;display:flex;align-items:center;gap:8px;color:#123f75;font-size:14px;font-weight:800;line-height:1.45}
+    .flow-body p{margin:5px 0 0;color:#41637f;font-size:13px;font-weight:500;line-height:1.6}
+    .flow-row.ai .flow-dot{background:linear-gradient(135deg,#1467c5,#3f92e6);border-color:#2e84dd;color:#fff;box-shadow:0 5px 13px rgba(20,103,197,.26)}
+    .flow-row.ai::before{background:linear-gradient(180deg,#93c6f0,#dbe9f6)}
+    .flow-row.ai .flow-body{border-color:#bcd9f4;background:linear-gradient(140deg,#fff,#edf5ff);box-shadow:0 6px 16px rgba(25,90,160,.07)}
+    .ai-flag{display:inline-block;padding:1px 7px;border-radius:999px;background:#1467c5;color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.06em}
+    .ai-note{margin:8px 0 0!important;padding:8px 11px;border-left:3px solid #4a9ae8;border-radius:0 10px 10px 0;background:#e8f3ff;color:#1b5b9e!important;font-size:12.5px!important;font-weight:600}
+    .ai-note b{margin-right:6px;color:#0f5fac;font-weight:800}
+    .ai-strip{margin-top:16px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start;padding:15px 17px;border:1px solid #c9e0f5;border-radius:15px;background:linear-gradient(135deg,#f1f8ff,#fff)}
+    .ai-strip-label{padding:5px 11px;border-radius:999px;background:#1467c5;color:#fff;font-size:12.5px;font-weight:800;white-space:nowrap}
+    .ai-strip ul{margin:0;padding:0;list-style:none;display:grid;gap:7px}
+    .ai-strip li{position:relative;padding-left:17px;color:#2f587f;font-size:13px;font-weight:600;line-height:1.6}
+    .ai-strip li::before{content:'';position:absolute;left:1px;top:7px;width:7px;height:7px;border-radius:50%;background:#4a9ae8}
+    .ai-layer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .ai-layer{display:flex;flex-direction:column;gap:12px;padding:20px;border:1px solid #c9e0f5;border-radius:17px;background:linear-gradient(145deg,#fff,#f6fbff 75%);box-shadow:0 10px 26px rgba(25,90,160,.06)}
+    .ai-layer-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start}
+    .ai-layer-ico{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:#e8f3ff;color:#1467c5;font-size:13px;font-weight:800}
+    .ai-layer h3{margin:0;display:flex;align-items:center;flex-wrap:wrap;gap:8px;color:var(--deep);font-size:17px}
+    .layer-sub{padding:2px 9px;border-radius:999px;background:#e8f3ff;color:#1b5b9e;font-size:11.5px;font-weight:800}
+    .ai-layer p{margin:5px 0 0;color:#4d6c8b;font-size:13px;font-weight:500;line-height:1.6}
+    .ai-layer ul{margin:0;padding:0;list-style:none;display:grid;gap:6px}
+    .ai-layer li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:9px;align-items:baseline;color:#4d6c8b;font-size:12.5px;font-weight:500;line-height:1.55}
+    .ai-layer li b{color:#1467c5;font-size:13px;font-weight:800}
+    @media(max-width:1050px){.plan-grid{grid-template-columns:1fr}.ai-layer-grid{grid-template-columns:1fr}}
+    @media(max-width:650px){.flow-body{padding:9px 11px}.ai-strip{grid-template-columns:1fr}.plan-cat{display:inline-block;margin:6px 0 0}.mx-table tbody th{width:auto;white-space:normal}}
+  </style>
+<style>
+  /* 品牌名更名后顶栏加宽一档：1051—1360px 区间做紧凑化，避免导航与返回按钮被挤换行 */
+  .brand span,.brand span:last-child{white-space:nowrap}
+  @media(min-width:1051px) and (max-width:1360px){
+    .topbar{padding:0 15px;gap:13px}
+    .brand{gap:10px}
+    .brand-logo{width:110px}
+    .site-nav{gap:2px;font-size:13px}
+    .site-nav a{padding:7px 6px}
+    .topnav{gap:4px;font-size:13px}
+    .topnav a{padding:7px 8px}
+    .nav{gap:3px;font-size:13.5px}
+    .nav a{padding:7px 7px}
+    .back{padding:7px 10px;font-size:12.5px}
+  }
+</style>
+<style>
+  /* 同类方案分组条（追加于样式块末尾） */
+  .plan-cat-head{display:flex;align-items:center;gap:13px;margin:36px 0 6px;padding:14px 18px;border:1px solid #d7e7f7;border-left:4px solid var(--blue);border-radius:14px;background:linear-gradient(135deg,#f2f8ff,#fff)}
+  .plan-cat-head:first-child{margin-top:0}
+  .plan-cat-head .scale-tag{flex:none}
+  .plan-cat-head b{font-size:15.5px;color:var(--deep);white-space:nowrap}
+  .plan-cat-head small{color:var(--muted);font-size:13px;font-weight:500;line-height:1.6}
+  .plan-cat-head .cat-count{margin-left:auto;flex:none;font-size:12.5px;font-weight:800;color:var(--blue);background:#eaf3fd;border-radius:999px;padding:3px 11px;white-space:nowrap}
+  @media(max-width:900px){.plan-cat-head{flex-wrap:wrap;gap:8px;padding:12px 14px}.plan-cat-head b{white-space:normal}.plan-cat-head .cat-count{margin-left:0}}
+  /* 收益测算入口标识（追加于样式块末尾） */
+  .calc-chip{display:inline-flex;align-items:center;gap:6px;margin-top:14px;margin-right:10px;padding:8px 13px;border-radius:11px;background:#e8f6ef;color:#15734f;font-size:13px;font-weight:800}
+  .calc-chip::before{content:'';width:7px;height:7px;border-radius:50%;background:#2fae77}
+  /* 组合收益测算（追加于样式块末尾） */
+  .calc-wrap{display:grid;gap:16px}
+  .calc-inputs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .calc-in{display:flex;flex-direction:column;gap:6px;padding:13px 15px;border:1px solid #d5e4f2;border-radius:12px;background:#fff}
+  .calc-in span{display:flex;justify-content:space-between;align-items:baseline;gap:8px;color:#2f587f;font-size:13px;font-weight:700}
+  .calc-in em{color:#7d95ab;font-style:normal;font-size:12px;font-weight:600;white-space:nowrap}
+  .calc-in input{width:100%;padding:8px 10px;border:1px solid #cfe1f3;border-radius:9px;background:#f8fbff;color:#0f3a6e;font:800 16px/1.4 "Microsoft YaHei","微软雅黑","Segoe UI",Arial,sans-serif}
+  .calc-in input:focus{outline:none;border-color:var(--blue);background:#fff}
+  .combo-rows{display:grid;gap:10px}
+  .combo-row{display:grid;grid-template-columns:minmax(220px,360px) minmax(0,1fr) auto;gap:14px;align-items:center;padding:12px 16px;border:1px solid #dbe9f6;border-radius:12px;background:#fff}
+  .combo-row.ex{background:#f7fafd;border-style:dashed}
+  .combo-info a{color:#114c8d;font-weight:800;font-size:14px}
+  .combo-info a:hover{color:var(--blue);text-decoration:underline}
+  .combo-info a b{color:var(--blue);margin-right:6px}
+  .combo-info small{display:block;margin-top:2px;color:#7d95ab;font-size:12px;font-weight:500;line-height:1.5}
+  .combo-bar{height:14px;border-radius:7px;background:#eef5fc;overflow:hidden}
+  .combo-bar i{display:block;height:100%;border-radius:7px;background:linear-gradient(90deg,#1467c5,#4a9ae8);min-width:6px;transition:width .25s}
+  .combo-bar i.zero{min-width:0;background:repeating-linear-gradient(45deg,#dbe7f2 0 6px,#eef5fc 6px 12px)}
+  .combo-row>b{color:#0f3a6e;font-size:17px;font-weight:800;white-space:nowrap}
+  .combo-row>b span{margin-left:4px;color:#7d95ab;font-size:12px;font-weight:700}
+  .combo-row.ex>b{color:#8aa0b4}
+  .combo-sum{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .combo-sum-card{padding:16px 18px;border:1px solid #cfe1f3;border-radius:13px;background:#f8fbff}
+  .combo-sum-card.hl{border-color:#9ecbf2;background:linear-gradient(145deg,#e8f3ff,#f4faff);box-shadow:0 8px 18px rgba(20,103,197,.1)}
+  .combo-sum-card small{display:block;color:#6b8299;font-size:12.5px;font-weight:700}
+  .combo-sum-card small.sub{margin-top:3px;color:#9db1c4;font-weight:500}
+  .combo-sum-card b{display:block;margin-top:5px;color:#0f3a6e;font-size:27px;font-weight:800;line-height:1.2}
+  .combo-sum-card b span{margin-left:5px;color:#45627c;font-size:13px;font-weight:700}
+  .combo-sum-card p{margin:5px 0 0;color:#5f7d97;font-size:12.5px;font-weight:500;line-height:1.6}
+  .calc-note{margin:0;padding:11px 14px;border:1px dashed #c9def2;border-radius:10px;background:#f8fbff;color:#7d95ab;font-size:12.5px;font-weight:500;line-height:1.6}
+  /* 区域选择器（追加于样式块末尾） */
+  .calc-region{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:12px 16px;border:1px solid #c9def2;border-radius:12px;background:linear-gradient(135deg,#e8f3ff,#f4faff)}
+  .calc-region label{color:#114c8d;font-size:14px;font-weight:800;white-space:nowrap}
+  .calc-region select{padding:8px 12px;border:1px solid #cfe1f3;border-radius:9px;background:#fff;color:#0f3a6e;font:700 14px/1.4 "Microsoft YaHei","微软雅黑","Segoe UI",Arial,sans-serif;cursor:pointer}
+  .calc-region select:focus{outline:none;border-color:var(--blue)}
+  .calc-region small{flex:1;min-width:260px;color:#5f7d97;font-size:12.5px;font-weight:500;line-height:1.6}
+  /* 储能配置切换（追加于样式块末尾） */
+  .mode-label{color:#114c8d;font-size:14px;font-weight:800;white-space:nowrap}
+  .ess-toggle{display:inline-flex;padding:3px;border:1px solid #cfe1f3;border-radius:11px;background:#f1f7fd;gap:3px}
+  .ess-toggle button{padding:7px 16px;border:none;border-radius:8px;background:transparent;color:#5f7d97;font:700 13px/1.4 "Microsoft YaHei","微软雅黑","Segoe UI",Arial,sans-serif;cursor:pointer;white-space:nowrap}
+  .ess-toggle button.on{background:linear-gradient(135deg,#1467c5,#3f92e6);color:#fff;box-shadow:0 4px 10px rgba(20,103,197,.28)}
+  .ess-toggle button:not(.on):hover{color:#1467c5}
+  .calc-inputs input:disabled{background:#eef3f8;color:#9db2c4;cursor:not-allowed}
+  .calc-in.disabled span{color:#9db2c4}
+  /* 场站组合推荐（追加于样式块末尾） */
+  .station-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+  .station-card{display:flex;flex-direction:column;gap:11px;padding:19px;border:1px solid #d5e4f2;border-radius:15px;background:#fff;box-shadow:0 8px 20px rgba(25,90,160,.05)}
+  .station-card:hover{border-color:#9cc4ec;box-shadow:0 12px 26px rgba(25,90,160,.1)}
+  .station-head{display:flex;align-items:center;gap:11px}
+  .station-ico{display:grid;place-items:center;flex:none;width:44px;height:44px;border-radius:13px;background:linear-gradient(135deg,#e8f3ff,#dcecfd);color:#1467c5;font-size:21px}
+  .station-head h3{margin:0;color:#123f75;font-size:16.5px}
+  .station-head small{color:#6b8299;font-size:12.5px;font-weight:600}
+  .station-head small b{color:#0f8a52}
+  .station-profile{margin:0;color:#46647e;font-size:13.5px;font-weight:500;line-height:1.7}
+  .station-feats{display:flex;flex-wrap:wrap;gap:6px}
+  .station-feats span{padding:4px 10px;border-radius:999px;background:#f1f7fd;border:1px solid #dbe9f6;color:#2f587f;font-size:12px;font-weight:600}
+  .station-plans{display:flex;flex-wrap:wrap;gap:6px}
+  .station-plan{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:9px;font-size:12px;font-weight:700;line-height:1.5;white-space:nowrap}
+  .station-plan i{font-style:normal;font-weight:800;opacity:.75}
+  .station-plan.core{background:#1467c5;color:#fff}
+  .station-plan.base{background:#eaf3fd;color:#0f5fac;border:1px solid #c9def2}
+  .station-plan.plus{background:#e9f7f0;color:#15734f;border:1px solid #c4e7d4}
+  .station-plan:hover{filter:brightness(1.06)}
+  .station-note{margin:0;padding:10px 12px;border:1px dashed #c9def2;border-radius:10px;background:#f8fbff;color:#46647e;font-size:12.5px;font-weight:500;line-height:1.65}
+  .station-load{margin-top:auto;align-self:flex-start;padding:9px 16px;border:none;border-radius:11px;background:linear-gradient(135deg,#1467c5,#3f92e6);color:#fff;font-size:13px;font-weight:800;cursor:pointer;box-shadow:0 8px 18px rgba(20,103,197,.25)}
+  .station-load:hover{filter:brightness(1.07)}
+  @media(max-width:1050px){.station-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:650px){.station-grid{grid-template-columns:1fr}}
+  @media(max-width:900px){.calc-inputs{grid-template-columns:repeat(2,minmax(0,1fr))}.combo-row{grid-template-columns:1fr;gap:8px}.combo-sum{grid-template-columns:1fr}.combo-sum-card b{font-size:23px}}
+</style>
+</head>
+<body>
+
+  <header class="shell topbar"><a class="brand" href="index.html"><img class="brand-logo" src="swaychip-logo.png" alt="中感睿思 SWAYCHIP" /><span>EMS 智慧能源运营解决方案</span></a><nav class="site-nav" aria-label="站点导航"><a href="index.html">首页</a><a href="policy.html">政策背景</a><a href="architecture.html">业务架构</a><a href="modules.html">功能模块</a><a href="ai-strategy.html">算法预测</a><a class="current" href="energy-plan.html">能量方案</a><a href="energy-equipment.html">场站设备</a><a href="bids.html">招标信息</a></nav><a class="back" href="index.html">← 返回首页</a></header>
+
+<main class="shell">
+    <div class="breadcrumb" aria-label="当前位置"><a href="index.html">首页</a><span class="sep">/</span><a href="modules.html">功能模块</a><span class="sep">/</span><strong>能量方案</strong></div>
+
+    <section class="hero">
+      <div class="eyebrow">ENERGY PLAN</div>
+      <h1>九类能量方案，AI 作用在每一个关键环节</h1>
+      <p class="lead">能量方案是平台面向“源、网、荷、储、充”的执行侧策略集合：从负荷安全控制与光伏防逆流，到有序充电、储能功率扩容与峰谷套利、需量控制，再到需求侧响应与虚拟电厂调控。每个方案都给出完整的业务流程，并逐环标明 AI 应当介入的位置——用预测替代估读、用寻优替代经验、用自学习替代一次性整定，让策略在安全边界内持续逼近最优。</p>
+    </section>
+
+    <section class="overview">
+      <div class="overview-main">
+        <h2>从“调度算法”到“能量方案”</h2>
+        <p>算法解决“怎么算”，方案解决“怎么落地”。能量方案把每类业务的触发条件、判定逻辑、设备动作、边界约束与恢复方式串成一条可执行、可追溯的流程，再把 AI 精准嵌入其中的预判、寻优与自学习环节，而不是笼统地“加一个模型”。</p>
+        <div class="scale-legend">
+          <div class="scale-item"><span class="scale-tag ultra">安全类</span><b>硬性执行</b><small>负荷安全控制（01）、光伏控制（02）：只做边界校核，不参与经济性权衡；AI 负责提前预判与动作序列寻优，动作本身严格按规则执行</small></div>
+          <div class="scale-item"><span class="scale-tag short">经济类</span><b>寻优执行</b><small>有序充电（03）、储能功率扩容（04）、峰谷套利（05）、需量控制（06）：AI 在容量、SOC 与寿命约束内滚动寻优，输出分钟级功率与充放电曲线</small></div>
+          <div class="scale-item"><span class="scale-tag mid">市场类</span><b>事件执行</b><small>需求侧响应（07、08）、虚拟电厂调控（09）：AI 负责基线预测、量价申报与指令分解，收益与考核风险共同决定动作</small></div>
+        </div>
+      </div>
+      <aside class="overview-note">
+        <b>共同运行机制</b>
+        <p>所有方案共用同一套数据底座与预测服务：量测数据统一时标入库，预测结果带置信区间下发；方案按周期或事件触发，指令分解到资源与设备并跟踪回执；实际执行结果回流后评估偏差，用于参数校正与策略迭代。方案之间按“安全 &gt; 考核 &gt; 收益”的优先级协同。</p>
+      </aside>
+    </section>
+
+    <nav class="quick-nav plan-nav" aria-label="页面导航"><a href="#matrix">策略一览</a><a href="#safety">01 负荷安全控制</a><a href="#pv">02 光伏控制</a><a href="#order-charge">03 有序充电</a><a href="#capacity">04 储能功率扩容</a><a href="#arbitrage">05 储能峰谷套利</a><a href="#demand">06 需量控制</a><a href="#dr-day">07 需求响应-日前邀约</a><a href="#dr-interrupt">08 需求响应-可中断负荷</a><a href="#vpp">09 虚拟电厂调控</a><a href="#coordination">10 策略协同</a><a href="#ai-role">11 AI 作用层次</a><a href="#station-rec">12 场站组合推荐</a><a href="#combo-calc">13 组合收益测算</a></nav>
+
+    <section class="platform" id="matrix">
+      <div class="platform-head"><div class="number">总览</div><div><h2>九类能量方案一览</h2><p>按业务性质分为安全类（01—02）、经济类（03—06）与市场类（07—09），同类方案相邻排布。每类方案给出触发方式、响应颗粒度与 AI 的关键作用，点击方案名可跳转至对应的业务流程。</p></div></div>
+      <div class="function-table-wrap">
+        <table class="function-table flow mx-table">
+          <thead><tr><th scope="col">编号 / 方案</th><th scope="col">分类</th><th scope="col">触发方式</th><th scope="col">响应颗粒度</th><th scope="col">AI 关键作用</th></tr></thead>
+          <tbody id="mxBody"></tbody>
+        </table>
+      </div>
+      <p class="table-note">响应颗粒度指方案从状态判定到指令下发的时间尺度。“硬性执行”表示该方案不参与经济性权衡，仅可配置阈值与动作顺序，确保安全边界不被寻优结果突破；“柔性执行”则由 AI 在边界内滚动寻优。</p>
+    </section>
+
+    <div id="planPanel"></div>
+
+    <section class="platform" id="coordination">
+      <div class="platform-head"><div class="number">10</div><div><h2>策略协同与优先级</h2><p>多类方案可能在同一时刻同时触发，必须由统一仲裁层决定谁先动、谁让位，否则指令会互相抵消。总体原则：安全类 &gt; 考核类 &gt; 经济类；低优先级方案在高优先级方案留出的剩余空间内重新寻优。</p></div></div>
+      <div class="function-table-wrap">
+        <table class="function-table flow">
+          <thead><tr><th scope="col">冲突场景</th><th scope="col">涉及方案</th><th scope="col">优先关系</th><th scope="col">处理方式</th></tr></thead>
+          <tbody id="coBody"></tbody>
+        </table>
+      </div>
+      <div class="platform-meta"><span>统一仲裁</span><span>剩余空间再寻优</span><span>越限自动回退</span><span>全过程留痕</span></div>
+    </section>
+
+    <section class="platform" id="ai-role">
+      <div class="platform-head"><div class="number">11</div><div><h2>AI 在能量方案中的作用层次</h2><p>把九类方案中的全部 AI 环节按作用性质归为四层。AI 不替代规则，而是在规则之上补足“看得更早、算得更准、恢复得更稳、迭代得更久”的能力——这也是判断一个能量方案是否真的“智能化”的标准。</p></div></div>
+      <div class="ai-layer-grid" id="layerPanel"></div>
+    </section>
+
+    <section class="platform" id="station-rec">
+      <div class="platform-head"><div class="number">12</div><div><h2>场站组合推荐</h2><p>不同类型的场站，资源禀赋与收益结构差异很大，适用的能量方案组合也不同。以下按<strong>典型单场站</strong>规模给出推荐组合与纯利润口径的年化收益（谷移收益按运营商留存 50%、响应收益已扣服务费损失）。选择贴近自身场站的类型，一键将典型资源参数载入下方组合收益测算工具；方案清单中的<strong>核心方案</strong>决定收益主线，基础方案提供安全与消纳兜底，增值方案放大市场收益。</p></div></div>
+      <div class="station-grid" id="stationPanel"></div>
+      <p class="calc-note">推荐组合基于各场站类型的典型资源禀赋与安徽现行政策口径生成，实际选型需结合场站配电容量、负荷结构与投资预算复核；点击「载入参数并测算」后，可再切换所属区域、微调参数获得本场站的定制化结果。</p>
+    </section>
+
+    <section class="platform" id="combo-calc">
+      <div class="platform-head"><div class="number">13</div><div><h2>组合收益测算工具</h2><p>输入场站级运行参数，按经济类与市场类方案分别测算年化收益并<strong>去重汇总</strong>：储能类方案（04 / 05 / 06）共用同一套放电能力，市场类方案（07 / 08 / 09）作用于同一批可调资源——合计时按「安全 &gt; 考核 &gt; 收益」的优先级只计一次，避免同一能力重复计价。测算口径已按行业真实运行数据校准，并支持<strong>无储能</strong>场景（仅充电侧与响应收益）。</p></div></div>
+      <div class="calc-wrap">
+        <div class="calc-region"><label for="comboStation">场站类型</label><select id="comboStation"></select><small id="comboStationNote"></small></div>
+        <div class="calc-region"><label for="comboRegion">所属区域</label><select id="comboRegion"></select><small id="comboRegionNote"></small></div>
+        <div class="calc-region"><span class="mode-label">储能配置</span><div class="ess-toggle" id="essToggle"><button type="button" data-ess="1" class="on">配置储能</button><button type="button" data-ess="0">无储能</button></div><small id="essModeNote">配置储能：包含峰谷套利与需量管理收益</small></div>
+        <div class="calc-inputs" id="comboInputs"></div>
+        <div class="combo-rows" id="comboRows"></div>
+        <div class="combo-sum" id="comboSum"></div>
+        <p class="calc-note">测算为<strong>单场站纯利润口径</strong>：谷移电费节省按运营商留存 50% 计（其余让利用户引导谷移）；储能套利净价差已扣衰减、运维与辅助损耗（等效日均 1.2 次满循环，对应真实项目 4—6 年回收期）；需求响应收益扣 15% 服务费损失与执行成本、有效容量按 0.7 打折。结果随电价政策、市场行情与执行率浮动。本工具用于组合层的去重汇总，单一方案的精细化参数测算见各方案「详细方案」页第 10 节收益测算工具。</p>
+      </div>
+    </section>
+</main>
+
+<footer class="shell footer"><span>© 2026 EMS 智慧能源运营解决方案</span><span>能量方案 · 负荷安全控制 · 有序充电 · 储能扩容与套利 · 需量控制 · 需求响应 · 光伏控制 · 虚拟电厂调控</span></footer>
+<script src="site-data.js"></script>
+<script src="energy-plan-data.js"></script>
+<script>
+    // 方案、协同与 AI 层次数据已抽取至 energy-plan-data.js（与详情页 energy-plan-detail.html 共用）
+    const { plans, coordination, layers } = window.EMSPlanData;
+
+        const esc = value => String(value).replace(/[&<>"']/g, char => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[char]));
+
+    const renderFlow = steps => steps.map((step, index) => `<li class="flow-row${step.ai ? ' ai' : ''}">
+        <span class="flow-dot">${index + 1}</span>
+        <div class="flow-body">
+          <h5>${esc(step.t)}${step.ai ? '<span class="ai-flag">AI</span>' : ''}</h5>
+          <p>${esc(step.d)}</p>
+          ${step.ai ? `<p class="ai-note"><b>AI 作用</b>${esc(step.ai)}</p>` : ''}
+        </div>
+      </li>`).join('');
+
+    const renderPlan = plan => `<section class="platform" id="${plan.id}">
+      <div class="platform-head"><div class="number">${esc(plan.no)}</div><div><h2>${esc(plan.name)}<span class="plan-cat">${esc(plan.cat)}</span></h2><p>${esc(plan.lead)}</p>${plan.cat !== '安全类' ? '<span class="calc-chip">含收益测算工具</span>' : ''}<a class="plan-detail-btn" href="energy-plan-detail.html?id=${plan.id}">查看详细方案 →</a></div></div>
+      <div class="plan-grid">
+        <dl class="model-spec plan-spec">${plan.spec.map(([key, value]) => `<div><dt>${esc(key)}</dt><dd>${esc(value)}</dd></div>`).join('')}</dl>
+        <div class="plan-flow">
+          <h4 class="flow-title">业务流程<span><i></i>蓝色环节为 AI 作用点，共 ${plan.flow.filter(step => step.ai).length} 处</span></h4>
+          <ol class="flow-list">${renderFlow(plan.flow)}</ol>
+        </div>
+      </div>
+      <div class="ai-strip"><span class="ai-strip-label">AI 关键作用</span><ul>${plan.ai.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>
+      <div class="platform-meta">${plan.kpi.map(item => `<span>${esc(item)}</span>`).join('')}</div>
+    </section>`;
+
+    // 同类方案归组展示：安全类 → 经济类 → 市场类，每组前插入分类条
+    const catOrder = { '安全类': 0, '经济类': 1, '市场类': 2 };
+    plans.sort((a, b) => catOrder[a.cat] - catOrder[b.cat]);
+    const catMeta = {
+      '安全类': { cls: 'ultra', nature: '硬性执行', note: '负荷安全控制、光伏控制：只做边界校核，不参与经济性权衡；AI 负责提前预判与动作序列寻优，动作本身严格按规则执行' },
+      '经济类': { cls: 'short', nature: '寻优执行', note: '有序充电、储能功率扩容、峰谷套利、需量控制：AI 在容量、SOC 与寿命约束内滚动寻优，输出分钟级功率与充放电曲线' },
+      '市场类': { cls: 'mid', nature: '事件执行', note: '需求侧响应、虚拟电厂调控：AI 负责基线预测、量价申报与指令分解，收益与考核风险共同决定动作' }
+    };
+    let lastCat = null;
+    document.querySelector('#planPanel').innerHTML = plans.map(plan => {
+      let head = '';
+      if (plan.cat !== lastCat) {
+        lastCat = plan.cat;
+        const meta = catMeta[plan.cat];
+        head = `<div class="plan-cat-head"><span class="scale-tag ${meta.cls}">${plan.cat}</span><b>${meta.nature}</b><small>${meta.note}</small><span class="cat-count">${plans.filter(p => p.cat === plan.cat).length} 项方案</span></div>`;
+      }
+      return head + renderPlan(plan);
+    }).join('');
+
+    document.querySelector('#mxBody').innerHTML = plans.map(plan => `<tr>
+      <th scope="row"><span class="mx-no">${esc(plan.no)}</span><a href="#${plan.id}">${esc(plan.name)}</a><a class="mx-detail" href="energy-plan-detail.html?id=${plan.id}" title="查看详细方案">详细 ›</a></th>
+      <td>${esc(plan.cat)}</td><td>${esc(plan.trigger)}</td><td>${esc(plan.grain)}</td><td>${esc(plan.aiBrief)}</td>
+    </tr>`).join('');
+
+    document.querySelector('#coBody').innerHTML = coordination.map(row => `<tr><th scope="row">${esc(row[0])}</th><td>${esc(row[1])}</td><td><b>${esc(row[2])}</b></td><td>${esc(row[3])}</td></tr>`).join('');
+
+    document.querySelector('#layerPanel').innerHTML = layers.map(layer => `<article class="ai-layer">
+      <div class="ai-layer-head"><span class="ai-layer-ico">${esc(layer.k)}</span><div><h3>${esc(layer.name)}<span class="layer-sub">${esc(layer.sub)}</span></h3><p>${esc(layer.desc)}</p></div></div>
+      <ul>${layer.items.map(([label, where]) => `<li><b>${esc(label)}</b><span>${esc(where)}</span></li>`).join('')}</ul>
+    </article>`).join('');
+
+    // ===== 组合收益测算（第 12 节）：场站级输入 → 经济/市场类方案收益分解与去重汇总 =====
+    const comboInputs = [
+      { k: 'xf', label: '变压器容量', unit: 'kVA', v: 1600, step: 100 },
+      { k: 'chg', label: '日均充电量', unit: 'kWh', v: 3000, step: 100 },
+      { k: 'sh', label: '可谷移电量比例', unit: '%', v: 12, step: 1 },
+      { k: 'ess', label: '储能容量', unit: 'kWh', v: 500, step: 50 },
+      { k: 'pr', label: '基本电价', unit: '元/kW·月', v: 40, step: 2 },
+      { k: 'spr', label: '峰谷价差', unit: '元/kWh', v: 0.72, step: 0.05 },
+      { k: 'drN', label: '年需求响应次数', unit: '次', v: 20, step: 1 },
+      { k: 'drH', label: '单次响应时长', unit: 'h', v: 2, step: 0.5 },
+      { k: 'drPr', label: '补偿单价', unit: '元/kWh', v: 3, step: 0.1 },
+      { k: 'inv', label: '储能系统投资', unit: '万元', v: 45, step: 5 }
+    ];
+    document.getElementById('comboInputs').innerHTML = comboInputs.map(inp =>
+      `<label class="calc-in"><span>${esc(inp.label)}<em>${esc(inp.unit)}</em></span><input type="number" value="${inp.v}" step="${inp.step}" min="0" data-k="${inp.k}" aria-label="${esc(inp.label)}" /></label>`).join('');
+
+    // 储能配置模式：1 = 配置储能，0 = 无储能（测算仅保留充电侧与响应收益）
+    let essOn = 1;
+    const applyEssMode = () => {
+      document.querySelectorAll('#essToggle button').forEach(b => b.classList.toggle('on', +b.dataset.ess === essOn));
+      document.querySelectorAll('#comboInputs input[data-k="ess"], #comboInputs input[data-k="inv"]').forEach(inp => { inp.disabled = !essOn; });
+      document.getElementById('essModeNote').textContent = essOn ? '配置储能：包含峰谷套利与需量管理收益' : '无储能：仅计充电侧谷移、有序充电压峰与需求响应收益';
+    };
+    document.getElementById('essToggle').addEventListener('click', ev => {
+      const btn = ev.target.closest('button[data-ess]');
+      if (!btn) return;
+      essOn = +btn.dataset.ess;
+      applyEssMode();
+      comboRender();
+    });
+
+    // 真实口径说明（单场站纯利润口径）：谷移比例参考重庆/宁波车网互动运行数据（公共快充站 10—15%）；
+    // 谷移电费节省按运营商留存 50% 计为纯利润（其余让利用户引导谷移）；
+    // 储能套利参考真实案例（浙江 2MWh：投资 150 万、年净利 34.7 万、回收 4.4 年）：
+    // 两充两放等效为日均 1.2 次满循环 × 净价差（85% 有效覆盖 − 衰减/运维/辅助 0.08 元/kWh）；
+    // 需求响应收益扣 15%（响应期充电服务费损失与执行成本），有效容量按 0.7 系数打折。
+    const comboCalc = (v, on) => {
+      const shF = v.sh / 100;
+      const essP = on ? v.ess * 0.5 : 0;                                   // 储能放电功率（0.5C 估算）
+      const row1 = v.chg * shF * v.spr * 365 * 0.5 / 10000;                // 有序充电：谷移留存收益（纯利润）
+      const netSpr = Math.max(v.spr * 0.85 - 0.08, 0);                     // 储能单次循环净价差
+      const arb = on ? v.ess * 0.9 * 0.88 * netSpr * 1.2 * 330 / 10000 : 0;// 套利净收益（等效 1.2 次满循环/日）
+      const dem = on ? Math.min(essP, v.xf * 0.08) * v.pr * 12 / 10000
+                     : Math.min(v.chg / 4 * shF, v.xf * 0.05) * v.pr * 12 / 10000;
+      const drCap = Math.min(v.xf * 0.25, v.chg / 4 * 0.3 + essP) * 0.7;   // 有效响应容量（0.7 打折）
+      const dr = drCap * v.drH * v.drN * v.drPr * 0.85 / 10000;            // 扣响应期服务费损失与执行成本
+      const rows = [
+        { no: '03', name: '有序充电', href: 'energy-plan-detail.html?id=order-charge', inc: true,
+          note: on ? '谷移电费节省按运营商留存 50% 计为纯利润（其余让利用户）；公共站价格引导实际 10—15%，班次制场站可更高'
+                   : '谷移电费节省按运营商留存 50% 计为纯利润；未配储能时这是主要收益来源，通过价格引导与有序调度实现',
+          val: row1 },
+        on
+          ? { no: '04·05·06', name: '储能类：套利 + 需量管理', href: 'energy-plan-detail.html?id=arbitrage', inc: true,
+              note: '同一套储能只计一次：等效日均 1.2 次满循环 × 净价差（已扣衰减/运维/辅助），叠加削峰降低基本电费（纯节省）',
+              val: arb + dem }
+          : { no: '06', name: '需量管理（有序充电压峰）', href: 'energy-plan-detail.html?id=demand', inc: true,
+              note: '未配置储能：通过有序充电压低峰段充电功率降低最大需量（上限为变压器容量的 5%），基本电费节省为纯利润',
+              val: dem },
+        { no: '07', name: '需求响应 · 日前邀约', href: 'energy-plan-detail.html?id=dr-day', inc: true,
+          note: '事件性收益：有效响应容量 =（充电可调 + 储能放电）× 0.7 系数，≤ 变压器 25%；已扣响应期服务费损失与执行成本 15%',
+          val: dr },
+        { no: '08', name: '需求响应 · 可中断负荷', href: 'energy-plan-detail.html?id=dr-interrupt', inc: false,
+          note: '与日前邀约作用于同一批可调资源，响应事件不叠加，不重复计入',
+          val: null },
+        { no: '09', name: '虚拟电厂调控', href: 'energy-plan-detail.html?id=vpp', inc: false,
+          note: '对外聚合交易的对象即上述资源，收益已包含在计入行内，不重复计入',
+          val: null }
+      ];
+      const total = rows.filter(r => r.inc).reduce((s, r) => s + r.val, 0);
+      return { rows, total };
+    };
+
+    const comboRender = () => {
+      const v = {};
+      document.querySelectorAll('#comboInputs input[data-k]').forEach(inp => { v[inp.dataset.k] = parseFloat(inp.value) || 0; });
+      const { rows, total } = comboCalc(v, essOn);
+      document.getElementById('comboRows').innerHTML = rows.map(r => `
+        <div class="combo-row${r.inc ? '' : ' ex'}">
+          <div class="combo-info"><a href="${r.href}"><b>${esc(r.no)}</b> ${esc(r.name)}</a><small>${esc(r.note)}</small></div>
+          <div class="combo-bar">${r.inc ? `<i style="width:${total > 0 ? Math.max(2, r.val / total * 100).toFixed(1) : 0}%"></i>` : '<i class="zero"></i>'}</div>
+          <b>${r.inc ? r.val.toFixed(2) : '—'}<span>${r.inc ? '万元 / 年' : '不重复计'}</span></b>
+        </div>`).join('');
+      document.getElementById('comboSum').innerHTML = `
+        <div class="combo-sum-card hl"><small>单站组合年化纯收益（去重后）</small><b>${total > 0 ? total.toFixed(2) : '—'}<span>万元 / 年</span></b><small class="sub">计入：03 + ${essOn ? '储能类 + 07' : '需量管理 + 07'}（${essOn ? '配置储能' : '无储能'}口径）</small></div>
+        <div class="combo-sum-card"><small>综合静态回收期</small><b>${essOn && total > 0 ? (v.inv / total).toFixed(1) : '—'}<span>年</span></b><small class="sub">${essOn ? '储能投资 ÷ 组合年化收益（含充电侧电费节省，口径偏乐观）' : '未配置储能，无储能投资可回收'}</small></div>
+        <div class="combo-sum-card"><small>去重口径</small><p>同一储能能力只计一次（${essOn ? '04 / 05 / 06 合并' : '无储能，需量管理按有序充电压峰单独计'}）；同一批可调资源只计一次（07 计入，08 / 09 不重复）。事件收益与常态收益按「安全 &gt; 考核 &gt; 收益」分层，不叠加。</p></div>`;
+    };
+    document.getElementById('comboInputs').addEventListener('input', () => { document.getElementById('comboRegion').value = '-1'; document.getElementById('comboStation').value = '-1'; comboRender(); });
+
+    // 区域联动：填充该区域峰谷价差 / 基本电价 / DR 补偿典型口径后重算
+    const comboRegions = window.EMSPlanData.regions || [];
+    const comboReg = document.getElementById('comboRegion');
+    const comboRegNote = document.getElementById('comboRegionNote');
+    comboReg.innerHTML = '<option value="-1">自定义参数</option>' + comboRegions.map((r, i) => '<option value="' + i + '">' + esc(r.name) + '</option>').join('');
+    const applyComboRegion = () => {
+      const r = comboRegions[+comboReg.value];
+      if (r) {
+        const map = { spr: r.spr, pr: r.dem, drPr: r.dr };
+        document.querySelectorAll('#comboInputs input[data-k]').forEach(inp => { if (map[inp.dataset.k] !== undefined) inp.value = map[inp.dataset.k]; });
+        comboRegNote.textContent = r.name + ' · ' + r.note;
+      } else {
+        comboRegNote.textContent = '使用下方手动输入参数';
+      }
+      comboRender();
+    };
+    comboReg.addEventListener('change', applyComboRegion);
+    comboReg.value = '0';
+    applyComboRegion();
+
+    // 场站类型联动：填充该类典型单站的资源参数（资源量与投资；价格口径由「所属区域」控制）
+    const comboStations = window.EMSPlanData.stations || [];
+    const comboSt = document.getElementById('comboStation');
+    const comboStNote = document.getElementById('comboStationNote');
+    const comboStDesc = s => {
+      const p = s.params, parts = [];
+      if (p.xf) parts.push('变压器 ' + p.xf + ' kVA');
+      if (p.chg) parts.push('日充电 ' + p.chg + ' kWh');
+      if (p.sh !== undefined) parts.push('谷移 ' + p.sh + '%');
+      if (p.ess) parts.push('储能 ' + p.ess + ' kWh');
+      if (p.inv) parts.push('储能投资 ' + p.inv + ' 万元');
+      if (p.drN) parts.push('年响应 ' + p.drN + ' 次 × ' + p.drH + 'h');
+      return s.icon + ' ' + s.name + ' · 典型单站：' + parts.join(' · ');
+    };
+    comboSt.innerHTML = '<option value="-1">通用典型参数</option>' + comboStations.map((s, i) => '<option value="' + i + '">' + esc(s.name) + '</option>').join('');
+    const applyComboStation = () => {
+      const s = comboStations[+comboSt.value];
+      if (s) {
+        document.querySelectorAll('#comboInputs input[data-k]').forEach(inp => { if (s.params[inp.dataset.k] !== undefined) inp.value = s.params[inp.dataset.k]; });
+        essOn = 1;
+        applyEssMode();
+        comboStNote.textContent = comboStDesc(s);
+      } else {
+        comboStNote.textContent = '使用下方手动输入参数（区域价格口径不变）';
+      }
+      comboRender();
+    };
+    comboSt.addEventListener('change', applyComboStation);
+    comboSt.value = '-1';
+    applyComboStation();
+
+    // ===== 场站组合推荐（第 12 节）：按场站类型推荐方案组合，可一键载入参数到第 13 节测算 =====
+    const roleMeta = {
+      core: { cls: 'core', label: '核心' },
+      base: { cls: 'base', label: '基础' },
+      plus: { cls: 'plus', label: '增值' }
+    };
+    const stations = window.EMSPlanData.stations || [];
+    const stationPrice = () => {
+      const v = {};
+      document.querySelectorAll('#comboInputs input[data-k]').forEach(inp => { v[inp.dataset.k] = parseFloat(inp.value) || 0; });
+      return v;
+    };
+    document.getElementById('stationPanel').innerHTML = stations.map(st => {
+      const p = stationPrice();
+      const estOn = comboCalc({ ...p, ...st.params }, 1).total;
+      const estOff = comboCalc({ ...p, ...st.params }, 0).total;
+      return `<article class="station-card" id="st-${st.id}">
+        <div class="station-head"><span class="station-ico">${st.icon}</span><div><h3>${esc(st.name)}</h3><small>${st.plans.length} 项方案 · 单站年化纯收益 <b>${estOn > 0 ? estOn.toFixed(1) : '—'} 万元</b>（含储能）/ <b>${estOff > 0 ? estOff.toFixed(1) : '—'} 万元</b>（无储能）</small></div></div>
+        <p class="station-profile">${esc(st.profile)}</p>
+        <div class="station-feats">${st.feats.map(f => `<span>${esc(f)}</span>`).join('')}</div>
+        <div class="station-plans">${st.plans.map(pl => {
+          const plan = plans.find(x => x.id === pl.id);
+          const rm = roleMeta[pl.role];
+          return `<a class="station-plan ${rm.cls}" href="energy-plan-detail.html?id=${pl.id}" title="${esc(plan ? plan.no + ' ' + plan.name : pl.id)} · 查看详细方案"><i>${rm.label}</i>${esc(plan ? plan.no + ' ' + plan.name : pl.id)}</a>`;
+        }).join('')}</div>
+        <p class="station-note">${esc(st.note)}</p>
+        <button class="station-load" type="button" data-st="${st.id}">载入参数并测算 →</button>
+      </article>`;
+    }).join('');
+    document.getElementById('stationPanel').addEventListener('click', ev => {
+      const btn = ev.target.closest('.station-load');
+      if (!btn) return;
+      const st = stations.find(s => s.id === btn.dataset.st);
+      if (!st) return;
+      comboSt.value = String(comboStations.indexOf(st));
+      applyComboStation();
+      const target = document.getElementById('combo-calc');
+      if (target.scrollIntoView) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    window.EMSLocalData.persistPage({ id: 'energy-plan.html', kind: 'energy-plan' });
+  </script>
+</body>
+</html>

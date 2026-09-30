@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EMS 智慧能源运营解决方案能量方案详情：九类能量方案的详细设计，含方案定位与适用场景、策略配置参数、逐步骤业务流程（输入 / 输出 / 异常）、界面交互设计、数据采集与接口、AI 算法设计、异常降级策略、方案协同关系与 KPI 验收标准。" />
+  <title>能量方案详情｜EMS 智慧能源运营解决方案</title>
+  <style>
+    :root{--blue:#1467c5;--deep:#0b3e81;--ink:#153b67;--muted:#45627c;--line:#d5e4f2}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#f8fcff 0,#edf6ff 32rem,#fff 74rem);color:var(--ink);font:16px/1.65 "Microsoft YaHei","微软雅黑","Segoe UI",Arial,sans-serif}.shell{max-width:1320px;margin:auto;padding:0 34px}a{color:inherit;text-decoration:none}.topbar{height:68px;margin-top:16px;padding:0 20px;border:1px solid #d8e7f5;border-radius:18px;background:rgba(255,255,255,.94);box-shadow:0 8px 28px rgba(25,90,160,.08);display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:14px;font-weight:700;color:#173e6c}.brand-logo{width:130px;height:auto;display:block}.site-nav{display:flex;align-items:center;gap:6px;color:#1f4c79;font-size:14px;font-weight:600}.site-nav a{padding:8px 9px;border-radius:8px}.site-nav a:hover,.site-nav a.current{background:#eaf4ff;color:#0f5fac}.back{padding:8px 12px;border:1px solid #d5e6f5;border-radius:9px;background:#fff;color:#23588f;font-size:14px;font-weight:600}.breadcrumb{display:flex;align-items:center;gap:7px;padding-top:18px;color:#58738d;font-size:14px;font-weight:500}.breadcrumb strong{color:#1b548f}.sep{color:#9db1c4}.hero{padding:60px 0 30px}.eyebrow{color:var(--blue);font-size:13px;font-weight:800;letter-spacing:.08em}.hero h1{margin:9px 0 12px;color:var(--deep);font-size:clamp(34px,5vw,54px);line-height:1.15;letter-spacing:-.03em}.lead{max-width:900px;margin:0;color:#244d78;font-size:18px;font-weight:500;line-height:1.75}.overview{display:grid;grid-template-columns:1.25fr .75fr;gap:22px;margin:8px 0 34px}.overview-main,.overview-note{padding:24px;border:1px solid #c9e0f5;border-radius:18px;background:rgba(255,255,255,.86);box-shadow:0 14px 32px rgba(25,90,160,.07)}.overview-main h2{margin:0 0 8px;color:#123f75;font-size:20px}.overview p{margin:0;color:#46647e;font-size:15px;font-weight:500}.overview-note{background:linear-gradient(145deg,#ecf8f2,#fff);border-color:#b9e1ce}.overview-note b{display:block;margin-bottom:6px;color:#166445;font-size:17px}.module-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.module-tabs button{cursor:pointer;padding:8px 12px;border:1px solid #cfe1f3;border-radius:999px;background:#fff;color:#3a6188;font:700 13px/1.35 inherit}.module-tabs button:hover,.module-tabs button[aria-selected="true"]{border-color:var(--blue);background:#eaf4ff;color:#0f5fac}.platform{margin:0 0 28px;padding:30px;border:1px solid #c9e0f5;border-radius:22px;background:linear-gradient(145deg,rgba(239,247,255,.94),#fff 58%);box-shadow:0 18px 42px rgba(25,90,160,.08)}.platform-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:17px;align-items:start;margin-bottom:12px}.number{display:grid;place-items:center;width:47px;height:47px;border-radius:14px;background:#1467c5;color:#fff;font-size:16px;font-weight:800;box-shadow:0 7px 16px rgba(20,103,197,.22)}.platform h2{margin:0;color:var(--deep);font-size:26px;line-height:1.3}.platform-head p,.table-note{margin:5px 0 0;color:#45627c;font-size:15px;font-weight:500}.table-note{margin:0 0 16px}.function-table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px;background:#fff}.function-table{width:100%;min-width:880px;border-collapse:collapse;font-size:14px;line-height:1.65}.function-table th,.function-table td{padding:13px 15px;border-right:1px solid #e1ebf4;border-bottom:1px solid #e1ebf4;text-align:left;vertical-align:top}.function-table thead th{position:sticky;top:0;background:#e8f3ff;color:#114c8d;font-size:14px}.function-table tbody th{width:18%;background:#f6faff;color:#184d84;font-weight:800}.function-table tbody th+th{width:23%;background:#fcfdff;color:#265f97;font-weight:700}.function-table td{width:59%;color:#45627c;font-weight:500}.function-table tr:last-child>*{border-bottom:0}.function-table tr>*:last-child{border-right:0}.platform-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.platform-meta span{padding:6px 10px;border-radius:999px;background:#e7f2ff;color:#286199;font-size:13px;font-weight:700}.footer{display:flex;justify-content:space-between;gap:18px;padding:22px 0;color:#365c80;border-top:1px solid var(--line);font-size:13px;font-weight:500}@media(max-width:1050px){.site-nav{display:none}.overview{grid-template-columns:1fr}}@media(max-width:650px){.shell{padding:0 18px}.topbar{height:60px;margin:10px 12px 0;padding:0 12px}.brand-logo{width:105px}.brand span{display:none}.back{font-size:12px;padding:7px 9px}.breadcrumb{padding-top:14px;font-size:13px}.hero{padding:46px 0 24px}.lead{font-size:16px}.overview-main,.overview-note,.platform{padding:18px;border-radius:16px}.platform h2{font-size:22px}.function-table{font-size:13px}.function-table th,.function-table td{padding:11px 12px}.footer{display:block}.footer span{display:block}.footer span+span{margin-top:5px}}
+  </style>
+  <style>
+    /* 快速导航 */
+    .quick-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px}.quick-nav a{padding:8px 13px;border:1px solid #cfe1f3;border-radius:999px;background:#fff;color:#3a6188;font-size:13px;font-weight:700}.quick-nav a:hover{border-color:var(--blue);background:#eaf4ff;color:#0f5fac}
+    /* 三档时间尺度说明 */
+    .scale-legend{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin-top:16px}.scale-item{padding:13px 14px;border:1px solid #d7e7f7;border-radius:13px;background:#f7fbff}.scale-item b{display:block;margin:8px 0 3px;color:#123f75;font-size:17px;line-height:1.3}.scale-item small{display:block;color:#4d6c8b;font-size:13px;font-weight:500;line-height:1.5}.scale-tag{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.02em;white-space:nowrap}.scale-tag.ultra{background:#e4f0ff;color:#1467c5}.scale-tag.short{background:#e3f5ec;color:#15734f}.scale-tag.mid{background:#fdf0e0;color:#b46a12}
+    /* 预测模型卡片 */
+    .model-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:4px}.model-card{display:flex;flex-direction:column;gap:14px;padding:22px;border:1px solid #d5e4f2;border-radius:18px;background:#fff;box-shadow:0 10px 26px rgba(25,90,160,.06);transition:box-shadow .2s,transform .2s}.model-card:hover{transform:translateY(-2px);box-shadow:0 18px 36px rgba(25,90,160,.13)}.model-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.model-horizon{color:#3d6287;font-size:13px;font-weight:700;text-align:right}.model-card h3{margin:0;color:var(--deep);font-size:18px;line-height:1.4}.model-spec{margin:0;display:grid;gap:8px}.model-spec>div{display:grid;grid-template-columns:74px minmax(0,1fr);gap:10px;align-items:start}.model-spec dt{color:#6b8299;font-size:13px;font-weight:700}.model-spec dd{margin:0;color:#2f587f;font-size:13.5px;font-weight:500;line-height:1.6}.accuracy{padding:13px 14px;border:1px solid #d9e8f7;border-radius:13px;background:#f7fbff}.acc-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px}.acc-head span{color:#5a7590;font-size:13px;font-weight:700}.acc-head b{color:#0f5fac;font-size:22px;font-weight:800;letter-spacing:-.01em}.bar{position:relative;height:8px;margin:9px 0 7px;border-radius:999px;background:#e4eef8;overflow:hidden}.bar i{position:absolute;top:0;bottom:0;left:0;border-radius:999px;background:linear-gradient(90deg,#4a9ae8,#0f5fac)}.bar i.s{background:linear-gradient(90deg,#54c08a,#16885b)}.bar i.m{background:linear-gradient(90deg,#f0b164,#d87a16)}.accuracy small{display:block;color:#4f6c88;font-size:12.5px;font-weight:500;line-height:1.55}.model-block h4{margin:0 0 7px;color:#123f75;font-size:14px;font-weight:800}.model-block ul{margin:0;padding-left:17px;display:grid;gap:5px}.model-block li{color:#3c5e80;font-size:13.5px;font-weight:500;line-height:1.6}.model-block p{margin:0;color:#3c5e80;font-size:13.5px;font-weight:500;line-height:1.65}.model-foot{margin-top:auto;display:flex;flex-wrap:wrap;gap:7px}.model-foot span{padding:5px 9px;border-radius:999px;background:#eef5fd;color:#2b6297;font-size:12px;font-weight:700}
+    /* 正确度矩阵 */
+    .function-table.flow th,.function-table.flow td{width:auto}.function-table.flow tbody th{width:16%}
+    .acc-table td,.acc-table thead th{text-align:center}.acc-table tbody th{width:22%;text-align:left}.acc-table td{width:auto}.acc-table .avg{background:#f6faff;color:#114c8d;font-weight:800}.acc-table .grade{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:999px;font-size:11px;font-weight:800;vertical-align:1px}.g-a{background:#e3f5ec;color:#15734f}.g-b{background:#e4f0ff;color:#1467c5}.g-c{background:#fdf0e0;color:#b46a12}
+    .loop{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:4px}.loop-card{padding:18px;border:1px solid #d5e4f2;border-radius:15px;background:#fff;box-shadow:0 8px 20px rgba(25,90,160,.05)}.loop-card b{display:block;margin-bottom:5px;color:#123f75;font-size:16px}.loop-card p{margin:0;color:#3c5e80;font-size:13.5px;font-weight:500;line-height:1.6}.loop-card i{display:grid;place-items:center;width:30px;height:30px;margin-bottom:10px;border-radius:9px;background:#e8f3ff;color:#1467c5;font-size:14px;font-weight:800;font-style:normal}
+    /* 能力分组标题 */
+    .group-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:center;margin:34px 0 20px;padding-bottom:13px;border-bottom:2px solid #dbeafe}.group-badge{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:#e8f3ff;color:#1467c5;font-size:17px;font-weight:800}.group-head h2{margin:0;color:var(--deep);font-size:24px;line-height:1.3}.group-head p{margin:4px 0 0;color:#45627c;font-size:15px;font-weight:500}
+    /* 策略与运维能力卡片 */
+    .cap-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:4px}.cap-card{display:flex;flex-direction:column;gap:15px;padding:24px;border:1px solid #c9e0f5;border-radius:20px;background:linear-gradient(145deg,#fff,#f7fbff 72%);box-shadow:0 12px 30px rgba(25,90,160,.07);transition:box-shadow .2s,transform .2s}.cap-card:hover{transform:translateY(-2px);box-shadow:0 18px 38px rgba(25,90,160,.13)}.cap-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start}.cap-no{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:#1467c5;color:#fff;font-size:15px;font-weight:800;box-shadow:0 6px 14px rgba(20,103,197,.22)}.cap-head h3{margin:0;color:var(--deep);font-size:20px;line-height:1.35}.cap-head p{margin:5px 0 0;color:#45627c;font-size:14px;font-weight:500;line-height:1.65}.cap-spec{margin:0;display:grid;gap:8px;padding:14px;border:1px solid #dbe9f6;border-radius:13px;background:#f7fbff}.cap-spec>div{grid-template-columns:88px minmax(0,1fr)}.cap-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.cap-cols h4{margin:0 0 7px;color:#123f75;font-size:14px;font-weight:800}.cap-cols ul{margin:0;padding-left:16px;display:grid;gap:4px}.cap-cols li{color:#3c5e80;font-size:13px;font-weight:500;line-height:1.6}.cap-kpi{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px}.cap-kpi span{padding:6px 10px;border-radius:999px;background:#e7f2ff;color:#286199;font-size:12.5px;font-weight:700}
+    @media(max-width:1050px){.scale-legend{grid-template-columns:1fr}.model-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.loop{grid-template-columns:repeat(2,minmax(0,1fr))}.cap-grid{grid-template-columns:1fr}}
+    @media(max-width:760px){.model-grid{grid-template-columns:1fr}.cap-cols{grid-template-columns:1fr}}
+    @media(max-width:650px){.model-card{padding:17px;border-radius:15px}.cap-card{padding:17px;border-radius:16px}.loop{grid-template-columns:1fr}.scale-item b{font-size:16px}.group-head{margin:26px 0 16px}.group-head h2{font-size:20px}}
+  </style>
+  <style>
+    /* ===== 能量方案页面 ===== */
+    .plan-nav a.cur{background:#eaf4ff;border-color:#9cc7ee;color:#0f5fac}
+    .platform{scroll-margin-top:20px}
+    .mx-table thead th,.mx-table td{text-align:left}
+    .mx-table tbody th{width:22%}
+    .mx-no{display:inline-grid;place-items:center;min-width:27px;height:27px;margin-right:8px;padding:0 6px;border-radius:8px;background:#e8f3ff;color:#1467c5;font-size:12px;font-weight:800;vertical-align:-7px}
+    .plan-cat{margin-left:9px;padding:3px 10px;border-radius:999px;background:#e8f3ff;color:#1b5b9e;font-size:12px;font-weight:800;vertical-align:3px;white-space:nowrap}
+    .plan-grid{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:18px;align-items:start;margin-top:2px}
+    .plan-spec{margin:0;padding:15px;border:1px solid #dbe9f6;border-radius:14px;background:#f7fbff}
+    .plan-spec>div{grid-template-columns:84px minmax(0,1fr)}
+    .plan-flow{display:grid;gap:11px}
+    .flow-title{margin:0;display:flex;align-items:baseline;flex-wrap:wrap;gap:9px;color:#123f75;font-size:15px;font-weight:800}
+    .flow-title span{color:#6c88a1;font-size:12.5px;font-weight:600}
+    .flow-title span i{display:inline-block;width:9px;height:9px;margin-right:5px;border-radius:50%;background:linear-gradient(135deg,#1467c5,#3f92e6);vertical-align:1px}
+    .flow-list{margin:0;padding:0;list-style:none}
+    .flow-row{position:relative;display:grid;grid-template-columns:30px minmax(0,1fr);gap:11px;padding-bottom:13px}
+    .flow-row:last-child{padding-bottom:0}
+    .flow-row::before{content:'';position:absolute;left:14px;top:33px;bottom:3px;width:2px;border-radius:2px;background:#dbe9f6}
+    .flow-row:last-child::before{display:none}
+    .flow-dot{position:relative;z-index:1;display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:#eef4fb;border:1px solid #dbe9f6;color:#3a628c;font-size:13px;font-weight:800}
+    .flow-body{padding:9px 13px;border:1px solid #e2edf8;border-radius:13px;background:#fbfdff}
+    .flow-body h5{margin:0;display:flex;align-items:center;gap:8px;color:#123f75;font-size:14px;font-weight:800;line-height:1.45}
+    .flow-body p{margin:5px 0 0;color:#41637f;font-size:13px;font-weight:500;line-height:1.6}
+    .flow-row.ai .flow-dot{background:linear-gradient(135deg,#1467c5,#3f92e6);border-color:#2e84dd;color:#fff;box-shadow:0 5px 13px rgba(20,103,197,.26)}
+    .flow-row.ai::before{background:linear-gradient(180deg,#93c6f0,#dbe9f6)}
+    .flow-row.ai .flow-body{border-color:#bcd9f4;background:linear-gradient(140deg,#fff,#edf5ff);box-shadow:0 6px 16px rgba(25,90,160,.07)}
+    .ai-flag{display:inline-block;padding:1px 7px;border-radius:999px;background:#1467c5;color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.06em}
+    .ai-note{margin:8px 0 0!important;padding:8px 11px;border-left:3px solid #4a9ae8;border-radius:0 10px 10px 0;background:#e8f3ff;color:#1b5b9e!important;font-size:12.5px!important;font-weight:600}
+    .ai-note b{margin-right:6px;color:#0f5fac;font-weight:800}
+    .ai-strip{margin-top:16px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start;padding:15px 17px;border:1px solid #c9e0f5;border-radius:15px;background:linear-gradient(135deg,#f1f8ff,#fff)}
+    .ai-strip-label{padding:5px 11px;border-radius:999px;background:#1467c5;color:#fff;font-size:12.5px;font-weight:800;white-space:nowrap}
+    .ai-strip ul{margin:0;padding:0;list-style:none;display:grid;gap:7px}
+    .ai-strip li{position:relative;padding-left:17px;color:#2f587f;font-size:13px;font-weight:600;line-height:1.6}
+    .ai-strip li::before{content:'';position:absolute;left:1px;top:7px;width:7px;height:7px;border-radius:50%;background:#4a9ae8}
+    .ai-layer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .ai-layer{display:flex;flex-direction:column;gap:12px;padding:20px;border:1px solid #c9e0f5;border-radius:17px;background:linear-gradient(145deg,#fff,#f6fbff 75%);box-shadow:0 10px 26px rgba(25,90,160,.06)}
+    .ai-layer-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start}
+    .ai-layer-ico{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:#e8f3ff;color:#1467c5;font-size:13px;font-weight:800}
+    .ai-layer h3{margin:0;display:flex;align-items:center;flex-wrap:wrap;gap:8px;color:var(--deep);font-size:17px}
+    .layer-sub{padding:2px 9px;border-radius:999px;background:#e8f3ff;color:#1b5b9e;font-size:11.5px;font-weight:800}
+    .ai-layer p{margin:5px 0 0;color:#4d6c8b;font-size:13px;font-weight:500;line-height:1.6}
+    .ai-layer ul{margin:0;padding:0;list-style:none;display:grid;gap:6px}
+    .ai-layer li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:9px;align-items:baseline;color:#4d6c8b;font-size:12.5px;font-weight:500;line-height:1.55}
+    .ai-layer li b{color:#1467c5;font-size:13px;font-weight:800}
+    @media(max-width:1050px){.plan-grid{grid-template-columns:1fr}.ai-layer-grid{grid-template-columns:1fr}}
+    @media(max-width:650px){.flow-body{padding:9px 11px}.ai-strip{grid-template-columns:1fr}.plan-cat{display:inline-block;margin:6px 0 0}.mx-table tbody th{width:auto;white-space:normal}}
+  </style>
+<style>
+  /* 品牌名更名后顶栏加宽一档：1051—1360px 区间做紧凑化，避免导航与返回按钮被挤换行 */
+  .brand span,.brand span:last-child{white-space:nowrap}
+  @media(min-width:1051px) and (max-width:1360px){
+    .topbar{padding:0 15px;gap:13px}
+    .brand{gap:10px}
+    .brand-logo{width:110px}
+    .site-nav{gap:2px;font-size:13px}
+    .site-nav a{padding:7px 6px}
+    .topnav{gap:4px;font-size:13px}
+    .topnav a{padding:7px 8px}
+    .nav{gap:3px;font-size:13.5px}
+    .nav a{padding:7px 7px}
+    .back{padding:7px 10px;font-size:12.5px}
+  }
+</style>
+<style>
+  /* 同类方案分组条（追加于样式块末尾） */
+  .plan-cat-head{display:flex;align-items:center;gap:13px;margin:36px 0 6px;padding:14px 18px;border:1px solid #d7e7f7;border-left:4px solid var(--blue);border-radius:14px;background:linear-gradient(135deg,#f2f8ff,#fff)}
+  .plan-cat-head:first-child{margin-top:0}
+  .plan-cat-head .scale-tag{flex:none}
+  .plan-cat-head b{font-size:15.5px;color:var(--deep);white-space:nowrap}
+  .plan-cat-head small{color:var(--muted);font-size:13px;font-weight:500;line-height:1.6}
+  .plan-cat-head .cat-count{margin-left:auto;flex:none;font-size:12.5px;font-weight:800;color:var(--blue);background:#eaf3fd;border-radius:999px;padding:3px 11px;white-space:nowrap}
+  @media(max-width:900px){.plan-cat-head{flex-wrap:wrap;gap:8px;padding:12px 14px}.plan-cat-head b{white-space:normal}.plan-cat-head .cat-count{margin-left:0}}
+</style>
+<style>
+  /* 详情页专属（追加于样式块末尾） */
+  .d-meta{display:flex;flex-wrap:wrap;gap:9px;margin:20px 0 0}
+  .d-meta span{padding:8px 13px;border:1px solid #cfe1f3;border-radius:11px;background:#fff;color:#2f587f;font-size:13px;font-weight:600;line-height:1.5}
+  .d-meta b{color:#0f5fac;font-weight:800}
+  .d-2col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+  .d-card{padding:19px;border:1px solid #d5e4f2;border-radius:15px;background:#fff;box-shadow:0 8px 20px rgba(25,90,160,.05)}
+  .d-card h3{margin:0 0 9px;color:#123f75;font-size:16px;display:flex;align-items:center;gap:8px}
+  .d-card h3 i{display:grid;place-items:center;flex:none;width:28px;height:28px;border-radius:9px;background:#e8f3ff;color:#1467c5;font-size:13px;font-weight:800;font-style:normal}
+  .d-card ul{margin:0;padding-left:17px;display:grid;gap:6px}
+  .d-card li{color:#3c5e80;font-size:13.5px;font-weight:500;line-height:1.65}
+  .d-p{margin:0;color:#46647e;font-size:14.5px;font-weight:500;line-height:1.8}
+  .step-io{margin:9px 0 0;display:grid;gap:5px;padding:10px 12px;border:1px dashed #c9def2;border-radius:10px;background:#f8fbff}
+  .step-io div{display:grid;grid-template-columns:58px minmax(0,1fr);gap:8px;font-size:12.5px;line-height:1.55;align-items:start}
+  .step-io dt{color:#6b8299;font-weight:800;white-space:nowrap}
+  .step-io dd{margin:0;color:#3c5e80;font-weight:500}
+  .step-io .err dd{color:#a3541e}
+  .plan-detail-btn{display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:9px 16px;border-radius:11px;background:linear-gradient(135deg,#1467c5,#3f92e6);color:#fff;font-size:13.5px;font-weight:800;box-shadow:0 8px 18px rgba(20,103,197,.25)}
+  .plan-detail-btn:hover{filter:brightness(1.07)}
+  .mx-detail{margin-left:8px;padding:2px 8px;border-radius:7px;background:#eaf4ff;color:#0f5fac;font-size:11.5px;font-weight:800;white-space:nowrap}
+  .mx-detail:hover{background:#1467c5;color:#fff}
+  .d-nav{display:flex;justify-content:space-between;gap:14px;margin:34px 0 44px}
+  .d-nav a{flex:1;padding:13px 18px;border:1px solid #cfe1f3;border-radius:13px;background:#fff;color:#23588f;font-weight:700;font-size:14px;line-height:1.5}
+  .d-nav a:hover{border-color:var(--blue);background:#eaf4ff}
+  .d-nav a.next{text-align:right}
+  .d-nav small{display:block;color:#7d95ab;font-size:12px;font-weight:600}
+  .syn-list{margin:0;padding:0;list-style:none;display:grid;gap:9px}
+  .syn-list li{position:relative;padding:11px 15px;border:1px solid #dbe9f6;border-radius:12px;background:#f8fbff;color:#3c5e80;font-size:13.5px;font-weight:500;line-height:1.65}
+  .syn-list li::before{content:'';position:absolute;left:-1px;top:11px;bottom:11px;width:3px;border-radius:2px;background:#4a9ae8}
+  .syn-list a{color:#0f5fac;font-weight:800}
+  .syn-list a:hover{text-decoration:underline}
+  .acc-list{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+  .acc-list li{display:flex;gap:9px;align-items:start;color:#2f587f;font-size:14px;font-weight:600;line-height:1.6}
+  .acc-list li i{display:grid;place-items:center;flex:none;width:22px;height:22px;margin-top:1px;border-radius:50%;background:#e3f5ec;color:#15734f;font-size:12px;font-weight:800;font-style:normal}
+  @media(max-width:850px){.d-2col{grid-template-columns:1fr}.step-io div{grid-template-columns:52px minmax(0,1fr)}.d-nav{flex-direction:column}}
+  /* 收益测算工具（追加于样式块末尾） */
+  .calc-wrap{display:grid;gap:16px}
+  .calc-inputs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .calc-in{display:flex;flex-direction:column;gap:6px;padding:13px 15px;border:1px solid #d5e4f2;border-radius:12px;background:#fff}
+  .calc-in span{display:flex;justify-content:space-between;align-items:baseline;gap:8px;color:#2f587f;font-size:13px;font-weight:700}
+  .calc-in em{color:#7d95ab;font-style:normal;font-size:12px;font-weight:600;white-space:nowrap}
+  .calc-in input{width:100%;padding:8px 10px;border:1px solid #cfe1f3;border-radius:9px;background:#f8fbff;color:#0f3a6e;font:800 16px/1.4 "Microsoft YaHei","微软雅黑","Segoe UI",Arial,sans-serif}
+  .calc-in input:focus{outline:none;border-color:var(--blue);background:#fff}
+  .calc-outs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+  .calc-out{padding:15px 17px;border:1px solid #dbe9f6;border-radius:13px;background:#f8fbff}
+  .calc-out.hl{border-color:#9ecbf2;background:linear-gradient(145deg,#e8f3ff,#f4faff);box-shadow:0 8px 18px rgba(20,103,197,.1)}
+  .calc-out small{display:block;color:#6b8299;font-size:12.5px;font-weight:700}
+  .calc-out b{display:block;margin-top:5px;color:#0f3a6e;font-size:25px;line-height:1.2;letter-spacing:-.01em;font-weight:800}
+  .calc-out b span{margin-left:5px;color:#45627c;font-size:13px;font-weight:700;letter-spacing:0}
+  .calc-out p{margin:7px 0 0;color:#7d95ab;font-size:12px;font-weight:500;line-height:1.55}
+  .calc-note{margin:0;padding:11px 14px;border:1px dashed #c9def2;border-radius:10px;background:#f8fbff;color:#7d95ab;font-size:12.5px;font-weight:500;line-height:1.6}
+  @media(max-width:850px){.calc-inputs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:650px){.calc-inputs{grid-template-columns:1fr}.calc-out b{font-size:22px}}
+  /* 区域选择器（追加于样式块末尾） */
+  .calc-region{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:12px 16px;border:1px solid #c9def2;border-radius:12px;background:linear-gradient(135deg,#e8f3ff,#f4faff)}
+  .calc-region label{color:#114c8d;font-size:14px;font-weight:800;white-space:nowrap}
+  .calc-region select{padding:8px 12px;border:1px solid #cfe1f3;border-radius:9px;background:#fff;color:#0f3a6e;font:700 14px/1.4 "Microsoft YaHei","微软雅黑","Segoe UI",Arial,sans-serif;cursor:pointer}
+  .calc-region select:focus{outline:none;border-color:var(--blue)}
+  .calc-region small{flex:1;min-width:260px;color:#5f7d97;font-size:12.5px;font-weight:500;line-height:1.6}
+</style>
+</head>
+<body>
+
+  <header class="shell topbar"><a class="brand" href="index.html"><img class="brand-logo" src="swaychip-logo.png" alt="中感睿思 SWAYCHIP" /><span>EMS 智慧能源运营解决方案</span></a><nav class="site-nav" aria-label="站点导航"><a href="index.html">首页</a><a href="policy.html">政策背景</a><a href="architecture.html">业务架构</a><a href="modules.html">功能模块</a><a href="ai-strategy.html">算法预测</a><a class="current" href="energy-plan.html">能量方案</a><a href="energy-equipment.html">场站设备</a><a href="bids.html">招标信息</a></nav><a class="back" href="energy-plan.html">← 返回能量方案</a></header>
+
+<main class="shell">
+    <div class="breadcrumb" aria-label="当前位置"><a href="index.html">首页</a><span class="sep">/</span><a href="energy-plan.html">能量方案</a><span class="sep">/</span><strong id="bcName">方案详情</strong></div>
+
+    <section class="hero" style="padding-bottom:14px">
+      <div class="eyebrow" id="dEyebrow">ENERGY PLAN · DETAIL</div>
+      <h1 id="dTitle">方案详情</h1>
+      <p class="lead" id="dLead"></p>
+      <div class="d-meta" id="dMeta"></div>
+    </section>
+
+    <div id="detailMain"></div>
+
+    <nav class="d-nav" id="dNav" aria-label="上一篇下一篇"></nav>
+</main>
+
+<footer class="shell footer"><span>© 2026 EMS 智慧能源运营解决方案</span><span>能量方案详情 · 详细设计 · 配置参数 · 业务流程 · AI 作用 · 验收标准</span></footer>
+<script src="site-data.js"></script>
+<script src="energy-plan-data.js"></script>
+<script>
+    const params = new URLSearchParams(location.search);
+    const id = params.get('id');
+    const data = window.EMSPlanData;
+    const idx = data.plans.findIndex(p => p.id === id);
+    if (idx < 0) { location.replace('energy-plan.html'); }
+    else {
+      const plan = data.plans[idx];
+      const det = data.detail[plan.id];
+      const catCls = { '安全类': 'ultra', '经济类': 'short', '市场类': 'mid' }[plan.cat] || 'ultra';
+      document.title = plan.name + ' · 详细方案｜EMS 智慧能源运营解决方案';
+      document.getElementById('bcName').textContent = plan.no + ' ' + plan.name;
+      document.getElementById('dEyebrow').textContent = 'ENERGY PLAN · DETAIL · ' + plan.no;
+      document.getElementById('dTitle').innerHTML = esc(plan.name) + '<span class="plan-cat">' + esc(plan.cat) + '</span>';
+      document.getElementById('dLead').textContent = det.positioning;
+      document.getElementById('dMeta').innerHTML = [
+        '<span><b>触发方式</b>　' + esc(plan.trigger) + '</span>',
+        '<span><b>响应颗粒度</b>　' + esc(plan.grain) + '</span>',
+        '<span><b>执行性质</b>　' + esc(plan.nature) + '</span>',
+        '<span><b>AI 关键作用</b>　' + esc(plan.aiBrief) + '</span>',
+        '<span class="scale-tag ' + catCls + '" style="align-self:center">' + esc(plan.cat) + '</span>'
+      ].join('');
+
+      const sec = (no, title, desc, inner) => '<section class="platform" id="sec' + no + '"><div class="platform-head"><div class="number">' + no + '</div><div><h2>' + title + '</h2><p>' + desc + '</p></div></div>' + inner + '</section>';
+      const table = (heads, rows) => '<div class="function-table-wrap"><table class="function-table flow"><thead><tr>' + heads.map(h => '<th scope="col">' + h + '</th>').join('') + '</tr></thead><tbody>' + rows.map(r => '<tr>' + r.map((c, i) => i === 0 ? '<th scope="row">' + c + '</th>' : '<td>' + c + '</td>').join('') + '</tr>').join('') + '</tbody></table></div>';
+
+      let html = '';
+      html += sec('01', '适用场景与实施前提', '方案落地的典型业务场景与必须满足的前提条件。三者同时成立时，方案才能按预期发挥价值。', '<div class="d-2col"><div class="d-card"><h3><i>景</i>适用场景</h3><ul>' + det.scenes.map(s => '<li>' + s + '</li>').join('') + '</ul></div><div class="d-card"><h3><i>前</i>实施前提</h3><ul>' + det.pre.map(s => '<li>' + s + '</li>').join('') + '</ul></div></div>');
+
+      html += sec('02', '策略配置参数', '方案运行依赖的核心参数、默认取值与配置说明。安全类参数为硬约束，经济类参数在约束内寻优。', table(['参数', '默认值 / 取值', '配置说明'], det.params.map(p => [esc(p[0]), '<b>' + esc(p[1]) + '</b>', esc(p[2])])));
+
+      html += sec('03', '详细业务流程', '六个步骤的输入、处理与输出，以及每一步的异常与降级策略。蓝色标注步骤为 AI 作用环节。', '<ol class="flow-list">' + plan.flow.map((step, i) => {
+        const io = det.stepIO[i] || {};
+        return '<li class="flow-row' + (step.ai ? ' ai' : '') + '"><span class="flow-dot">' + (i + 1) + '</span><div class="flow-body"><h5>' + esc(step.t) + (step.ai ? '<span class="ai-flag">AI</span>' : '') + '</h5><p>' + esc(step.d) + '</p>' + (step.ai ? '<p class="ai-note"><b>AI 作用</b>' + esc(step.ai) + '</p>' : '') + '<dl class="step-io"><div><dt>输入</dt><dd>' + esc(io.i || '—') + '</dd></div><div><dt>输出</dt><dd>' + esc(io.o || '—') + '</dd></div><div class="err"><dt>异常</dt><dd>' + esc(io.e || '—') + '</dd></div></dl></div></li>';
+      }).join('') + '</ol>');
+
+      html += sec('04', '界面与交互设计', '方案在平台中的功能页面划分与各自的核心要素，覆盖监控、配置、执行与复盘全闭环。', table(['页面 / 模块', '功能要点'], det.ui.map(u => [esc(u[0]), esc(u[1])])));
+
+      html += sec('05', '数据采集与系统接口', '方案运行需要采集的数据项及来源频率，以及与外部系统的接口交互方向。', '<div class="d-2col"><div>' + table(['数据项', '来源 · 频率'], det.data.map(d => [esc(d[0]), esc(d[1])])) + '</div><div>' + table(['对接系统', '交互内容与方向'], det.iface.map(f => [esc(f[0]), esc(f[1])])) + '</div></div>');
+
+      html += sec('06', 'AI 算法设计', '方案内置的 AI 能力：输入 → 输出 → 闭环方式。AI 不替代规则，而是在规则之上补足预判、寻优与自学习。', '<div class="d-2col">' + det.ai.map((a, i) => '<div class="d-card"><h3><i>' + (i + 1) + '</i>' + esc(a[0]) + '</h3><p class="d-p">' + esc(a[1]) + '</p></div>').join('') + '</div>');
+
+      html += sec('07', '异常场景与降级策略', '每一个异常场景都有明确的降级路径：先保安全与保供，再保收益，全过程留痕可追溯。', table(['异常场景', '处理与降级策略'], det.exc.map(x => [esc(x[0]), esc(x[1])])));
+
+      html += sec('08', '与其他方案的协同', '方案不是孤岛：与其余能量方案按“安全 > 考核 > 收益”的优先级协同运行。', '<ul class="syn-list">' + det.syn.map(s => '<li>' + s + '</li>').join('') + '</ul>');
+
+      html += sec('09', 'KPI 与验收标准', '方案交付的量化验收口径，也是投运后持续评估的指标基线。', '<div class="ai-strip"><span class="ai-strip-label">考核指标</span><ul>' + plan.kpi.map(k => '<li>' + esc(k) + '</li>').join('') + '</ul></div><ul class="acc-list" style="margin-top:14px">' + det.acc.map(a => '<li><i>✓</i>' + esc(a) + '</li>').join('') + '</ul>');
+
+      if (det.calc) {
+        const c = det.calc;
+        html += sec('10', '收益测算工具', c.intro, '<div class="calc-wrap" id="calcBox"><div class="calc-region"><label for="calcStation">场站类型</label><select id="calcStation"></select><small id="calcStationNote"></small></div><div class="calc-region"><label for="calcRegion">所属区域</label><select id="calcRegion"></select><small id="calcRegionNote"></small></div><div class="calc-inputs">' + c.inputs.map(inp => '<label class="calc-in"><span>' + esc(inp.label) + '<em>' + esc(inp.unit) + '</em></span><input type="number" value="' + inp.v + '" step="' + inp.step + '" min="0" data-k="' + inp.k + '" aria-label="' + esc(inp.label) + '" /></label>').join('') + '</div><div class="calc-outs" id="calcOuts"></div><p class="calc-note">场站类型自动填入该类典型单站的资源参数（充电量、谷移比例、储能容量、投资、响应频次等），所属区域自动填充当地峰谷价差、基本电价与需求响应补偿的现行典型口径（均可手动微调）；测算为静态估算，结果随电价政策、市场行情与执行率浮动，接入平台后按真实运行数据自动核算。</p></div>');
+      }
+
+      document.getElementById('detailMain').innerHTML = html;
+
+      if (det.calc) {
+        const box = document.getElementById('calcBox');
+        const recompute = () => {
+          const v = {};
+          box.querySelectorAll('input[data-k]').forEach(inp => { v[inp.dataset.k] = parseFloat(inp.value) || 0; });
+          document.getElementById('calcOuts').innerHTML = det.calc.out(v).map(o => '<div class="calc-out' + (o.hl ? ' hl' : '') + '"><small>' + esc(o.label) + '</small><b>' + o.val + '<span>' + esc(o.unit) + '</span></b><p>' + esc(o.formula) + '</p></div>').join('');
+        };
+        box.addEventListener('input', recompute);
+
+        // 区域联动：按区域现行典型口径填充价差 / 基本电价 / DR 补偿 / VPP 单价
+        const regions = (data.regions || []);
+        const reg = document.getElementById('calcRegion');
+        const regNote = document.getElementById('calcRegionNote');
+        const regMap = { spr: 'spr', pr: 'dem', drPr: 'dr', vpr: 'vpp' };
+        reg.innerHTML = '<option value="-1">自定义参数</option>' + regions.map((r, i) => '<option value="' + i + '">' + esc(r.name) + '</option>').join('');
+        const applyRegion = () => {
+          const r = regions[+reg.value];
+          if (r) {
+            box.querySelectorAll('input[data-k]').forEach(inp => { if (regMap[inp.dataset.k] !== undefined) inp.value = r[regMap[inp.dataset.k]]; });
+            regNote.textContent = r.name + ' · ' + r.note;
+          } else {
+            regNote.textContent = '使用下方手动输入参数';
+          }
+          recompute();
+        };
+        reg.addEventListener('change', applyRegion);
+        reg.value = '0';
+        applyRegion();
+
+        // 场站类型联动：填充该类典型单站的资源参数（资源量与投资；价格口径由「所属区域」控制）
+        const stations = (data.stations || []);
+        const stSel = document.getElementById('calcStation');
+        const stNote = document.getElementById('calcStationNote');
+        if (stations.length && stSel) {
+          const r10 = n => Math.round(n / 10) * 10;
+          const stMap = {
+            'order-charge': { chg: p => p.chg, shift: p => p.sh },
+            'capacity': { pk: p => r10(p.xf * 0.2), inv: p => p.inv },
+            'arbitrage': { cap: p => p.ess, inv: p => p.inv },
+            'demand': { dm: p => r10(p.xf * 0.8) },
+            'vpp': { cap: p => r10(p.xf * 0.25) },
+            'dr-day': { cap: p => r10(p.xf * 0.25 * 0.7), n: p => p.drN, h: p => p.drH },
+            'dr-interrupt': { cap: p => r10(p.xf * 0.25 * 0.7), n: p => p.drN, h: p => p.drH }
+          }[plan.id] || {};
+          const stDesc = s => {
+            const p = s.params, parts = [];
+            if (p.xf) parts.push('变压器 ' + p.xf + ' kVA');
+            if (p.chg) parts.push('日充电 ' + p.chg + ' kWh');
+            if (p.sh !== undefined) parts.push('谷移 ' + p.sh + '%');
+            if (p.ess) parts.push('储能 ' + p.ess + ' kWh');
+            if (p.inv) parts.push('储能投资 ' + p.inv + ' 万元');
+            if (p.drN) parts.push('年响应 ' + p.drN + ' 次 × ' + p.drH + 'h');
+            return s.icon + ' ' + s.name + ' · 典型单站：' + parts.join(' · ');
+          };
+          stSel.innerHTML = '<option value="-1">通用典型参数</option>' + stations.map((s, i) => '<option value="' + i + '">' + esc(s.name) + '</option>').join('');
+          const applyStation = () => {
+            const s = stations[+stSel.value];
+            if (s) {
+              box.querySelectorAll('input[data-k]').forEach(inp => { const f = stMap[inp.dataset.k]; if (f) inp.value = f(s.params); });
+              stNote.textContent = stDesc(s);
+            } else {
+              stNote.textContent = '使用下方通用默认参数';
+            }
+            recompute();
+          };
+          stSel.addEventListener('change', applyStation);
+          stSel.value = '-1';
+          applyStation();
+        }
+      }
+
+      const prev = data.plans[idx - 1], next = data.plans[idx + 1];
+      document.getElementById('dNav').innerHTML =
+        (prev ? '<a class="prev" href="energy-plan-detail.html?id=' + prev.id + '"><small>← 上一方案</small>' + esc(prev.no + ' ' + prev.name) + '</a>' : '<a class="prev" href="energy-plan.html"><small>← 返回</small>九类能量方案总览</a>') +
+        (next ? '<a class="next" href="energy-plan-detail.html?id=' + next.id + '"><small>下一方案 →</small>' + esc(next.no + ' ' + next.name) + '</a>' : '<a class="next" href="energy-plan.html"><small>返回 →</small>九类能量方案总览</a>');
+    }
+
+    function esc(value) { return String(value).replace(/[&<>"']/g, char => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[char])); }
+    window.EMSLocalData && window.EMSLocalData.persistPage({ id: 'energy-plan-detail.html', kind: 'energy-plan-detail' });
+</script>
+</body>
+</html>

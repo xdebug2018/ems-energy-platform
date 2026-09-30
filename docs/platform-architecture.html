@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="EMS智慧能源运营平台各业务平台架构图。" />
-  <title>平台业务架构｜EMS 智慧能源运营平台</title>
+  <meta name="description" content="EMS 智慧能源运营解决方案各业务平台架构图。" />
+  <title>平台业务架构｜EMS 智慧能源运营解决方案</title>
   <style>
     :root{--blue:#1467c5;--deep:#0b3e81;--ink:#153b67;--muted:#45627c;--line:#d5e4f2;--green:#16885b;--orange:#cc7418}*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#f8fcff 0,#edf6ff 38rem,#fff 82rem);color:var(--ink);font-family:"Microsoft YaHei","微软雅黑","Segoe UI",Arial,sans-serif;font-size:16px;line-height:1.6}.shell{max-width:1320px;margin:auto;padding:0 34px}a{color:inherit;text-decoration:none}.topbar{height:68px;margin-top:16px;padding:0 20px;border:1px solid #d8e7f5;border-radius:18px;background:rgba(255,255,255,.92);box-shadow:0 8px 28px rgba(25,90,160,.08);display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:14px;font-weight:700;color:#173e6c}.brand-logo{width:130px;height:auto;display:block}.back{padding:8px 12px;border:1px solid #d5e6f5;border-radius:9px;background:#fff;color:#23588f;font-size:14px;font-weight:600}.back:hover{background:#eaf4ff}.hero{padding:68px 0 28px}.eyebrow{color:var(--blue);font-size:13px;font-weight:800;letter-spacing:.08em}h1{margin:10px 0 12px;color:var(--deep);font-size:clamp(32px,5vw,52px);line-height:1.16;letter-spacing:-.025em}.lead{max-width:850px;margin:0;color:#244d78;font-size:18px;font-weight:500;line-height:1.75}.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:25px 0 28px}.tabs a{padding:8px 11px;border:1px solid #cfe1f3;border-radius:8px;background:#fff;color:#3a6188;font-size:14px;font-weight:600}.tabs a:hover,.tabs a.active{border-color:var(--blue);background:#eaf4ff;color:#0f5fac}.diagram{margin-bottom:54px;padding:28px;border:1px solid #c7dff4;border-radius:22px;background:linear-gradient(145deg,#eff7ff,#fff 56%);box-shadow:0 20px 48px rgba(25,90,160,.10)}.diagram-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:0 0 20px}.diagram-head h2{margin:0;color:var(--deep);font-size:24px}.diagram-head p{margin:4px 0 0;color:var(--muted);font-size:14px;font-weight:500}.badge{padding:5px 9px;border-radius:6px;background:#e8f3ff;color:#2464a4;font-size:12px;font-weight:800;white-space:nowrap}.flow{display:grid;gap:10px}.lane{padding:16px 18px 18px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.9)}.lane-name{display:flex;align-items:center;gap:9px;margin:0 0 12px;color:#1c548f;font-size:13px;font-weight:800;letter-spacing:.05em}.lane-name:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px rgba(20,103,197,.1)}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.card{min-height:92px;padding:13px 14px;border:1px solid #cfe2f4;border-radius:11px;background:#f8fbff}.card b{display:block;color:#123f75;font-size:16px;line-height:1.45}.card small{display:block;margin-top:3px;color:#4b6884;font-size:13px;font-weight:500;line-height:1.45}.card.smart{background:linear-gradient(135deg,#edf9f3,#fbfffd);border-color:#b8e2cd}.card.smart b{color:#166445}.card.outer{background:linear-gradient(135deg,#fff6e9,#fffdf9);border-color:#f0d4aa}.card.outer b{color:#a85a0e}.arrow{height:20px;display:grid;place-items:center;color:#5e93c6;font-size:13px;font-weight:700}.arrow:before{content:"↓";font-size:20px;line-height:1}.arrow span{display:none}.outcome{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:15px}.outcome article{padding:18px;border:1px solid var(--line);border-radius:13px;background:#fff}.outcome h3{margin:0 0 5px;color:#123f75;font-size:17px}.outcome p{margin:0;color:#46647e;font-size:15px;font-weight:500}.foot{padding:22px 0;border-top:1px solid var(--line);color:#365c80;font-size:13px;font-weight:500}@media(max-width:900px){.cards{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.shell{padding:0 18px}.topbar{height:60px;margin:10px 12px 0;padding:0 12px}.brand-logo{width:105px}.brand span{display:none}.back{font-size:12px;padding:7px 9px}.hero{padding:50px 0 20px}.lead{font-size:16px}.diagram{padding:16px;margin-bottom:38px;border-radius:16px}.diagram-head{align-items:flex-start;flex-direction:column;gap:5px}.badge{white-space:normal}.lane{padding:14px}.cards,.outcome{grid-template-columns:1fr}.card{min-height:auto}}
   </style>
@@ -21,16 +21,31 @@
     .arrow span{position:relative;z-index:2;display:block;margin-top:-2px;padding:1px 10px;background:#eff7ff;color:#4f7fac;font-size:12px;font-weight:700;line-height:1.25}
     @media(max-width:620px){.cards,.outcome{grid-template-columns:1fr}}
   </style>
-  <style>.site-nav a[href="bids.html"]{order:99}</style>
+<style>
+  /* 品牌名更名后顶栏加宽一档：1051—1360px 区间做紧凑化，避免导航与返回按钮被挤换行 */
+  .brand span,.brand span:last-child{white-space:nowrap}
+  @media(min-width:1051px) and (max-width:1360px){
+    .topbar{padding:0 15px;gap:13px}
+    .brand{gap:10px}
+    .brand-logo{width:110px}
+    .site-nav{gap:2px;font-size:13px}
+    .site-nav a{padding:7px 6px}
+    .topnav{gap:4px;font-size:13px}
+    .topnav a{padding:7px 8px}
+    .nav{gap:3px;font-size:13.5px}
+    .nav a{padding:7px 7px}
+    .back{padding:7px 10px;font-size:12.5px}
+  }
+</style>
 </head>
 <body>
-  <header class="shell topbar"><a class="brand" href="index.html"><img class="brand-logo" src="swaychip-logo.png" alt="中感睿思 SWAYCHIP" /><span>EMS 智慧能源运营平台</span></a><nav class="site-nav" aria-label="站点导航"><a href="index.html">首页</a><a href="policy.html">政策背景</a><a class="current" href="architecture.html">业务架构</a><a href="modules.html">功能模块</a><a href="index.html#algorithm">调度算法</a><a href="bids.html">招标信息</a></nav><a class="back" href="architecture.html">← 返回总体业务视图</a></header>
+  <header class="shell topbar"><a class="brand" href="index.html"><img class="brand-logo" src="swaychip-logo.png" alt="中感睿思 SWAYCHIP" /><span>EMS 智慧能源运营解决方案</span></a><nav class="site-nav" aria-label="站点导航"><a href="index.html">首页</a><a href="policy.html">政策背景</a><a class="current" href="architecture.html">业务架构</a><a href="modules.html">功能模块</a><a href="ai-strategy.html">算法预测</a><a href="energy-plan.html">能量方案</a><a href="energy-equipment.html">场站设备</a><a href="bids.html">招标信息</a></nav><a class="back" href="architecture.html">← 返回总体业务视图</a></header>
   <main class="shell">
     <div class="breadcrumb" aria-label="当前位置"><a href="index.html">首页</a><span class="sep">/</span><a href="architecture.html">业务架构</a><span class="sep">/</span><strong id="current-position"></strong></div><section class="hero"><div class="eyebrow">PLATFORM ARCHITECTURE</div><h1 id="title"></h1><p class="lead" id="lead"></p></section>
     <nav class="tabs" id="tabs" aria-label="业务平台架构"></nav>
     <section class="diagram"><div class="diagram-head"><div><h2 id="diagram-title"></h2><p id="diagram-desc"></p></div><span class="badge">业务架构视图</span></div><div class="flow" id="flow"></div><div class="outcome" id="outcome"></div></section>
   </main>
-  <footer class="shell foot">© 2026 EMS 智慧能源运营平台 · 业务架构</footer>
+  <footer class="shell foot">© 2026 EMS 智慧能源运营解决方案 · 业务架构</footer>
   <script src="site-data.js"></script>
   <script>
     const modules={
@@ -44,7 +59,7 @@
     };
     function renderPlatformArchitecture(){
     const key=location.hash.slice(1); const current=modules[key]||modules.vpp; const active=modules[key]?key:'vpp';
-    document.title=current.name+'业务架构｜EMS 智慧能源运营平台'; document.querySelector('#current-position').textContent=current.name; document.querySelector('#title').textContent=current.name+'业务架构'; document.querySelector('#lead').textContent=current.lead; document.querySelector('#diagram-title').textContent=current.name+'业务架构图 · 反馈—执行—决策—数据'; document.querySelector('#diagram-desc').textContent=current.desc+' 架构按反馈、执行、决策、数据四层闭环展示。';
+    document.title=current.name+'业务架构｜EMS 智慧能源运营解决方案'; document.querySelector('#current-position').textContent=current.name; document.querySelector('#title').textContent=current.name+'业务架构'; document.querySelector('#lead').textContent=current.lead; document.querySelector('#diagram-title').textContent=current.name+'业务架构图 · 反馈—执行—决策—数据'; document.querySelector('#diagram-desc').textContent=current.desc+' 架构按反馈、执行、决策、数据四层闭环展示。';
     document.querySelector('#tabs').innerHTML=Object.entries(modules).map(([id,item])=>`<a class="${id===active?'active':''}" href="platform-architecture.html#${id}">${item.name}</a>`).join('');
     const relationshipLanes=[['反馈层 · 成效与运行反馈',current.outcomes],['执行层 · '+current.lanes[2][0],current.lanes[2][1]],['决策层 · '+current.lanes[1][0],current.lanes[1][1]],['数据层 · '+current.lanes[0][0],current.lanes[0][1]]];
     const relationshipLabels=['经营反馈下达 · 执行结果回传','任务计划下达 · 运行偏差回传','策略指令下达 · 实时数据回传'];
